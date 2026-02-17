@@ -1,213 +1,487 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial por Matheus M. Mendez
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Portfólio de Projetos de Ciência de Dados.</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deepblue.ia — Inteligência Artificial & Data Science</title>
+    <meta name="description" content="deepblue.ia — Transformamos dados em resultados com Inteligência Artificial, Data Science, Engenharia de Dados e Desenvolvimento de Software." />
+    <meta name="keywords" content="inteligência artificial, data science, engenharia de dados, machine learning, deep learning, desenvolvimento de software" />
+    <meta name="author" content="deepblue.ia" />
+    <meta property="og:title" content="deepblue.ia — IA que transforma dados em resultados" />
+    <meta property="og:description" content="Soluções de IA, Data Science, Engenharia de Dados e Desenvolvimento de Software para acelerar o seu negócio." />
+    <meta property="og:type" content="website" />
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="images/deepblue_logo.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="images/deepblue_logo.jpeg" alt="deepblue.ia logo" class="nav-logo-img">
+                <span class="nav-logo-text">deep<span class="accent">blue</span><span class="suffix">.ia</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato" class="nav-cta">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg-effects">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge" data-animate="fade-up">
+                    <i class="fas fa-microchip"></i>
+                    <span>Inteligência Artificial & Data Science</span>
+                </div>
+                <h1 data-animate="fade-up" data-delay="100">
+                    Transformamos <span class="gradient-text">dados</span> em <span class="gradient-text">resultados</span>
+                </h1>
+                <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                    Soluções inteligentes de IA, Data Science, Engenharia de Dados e Desenvolvimento de Software para acelerar a transformação digital do seu negócio.
+                </p>
+                <div class="hero-actions" data-animate="fade-up" data-delay="300">
+                    <a href="#servicos" class="btn btn-primary">
+                        <span>Nossos Serviços</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contato" class="btn btn-outline">
+                        <span>Fale Conosco</span>
+                    </a>
+                </div>
+                <div class="hero-stats" data-animate="fade-up" data-delay="400">
+                    <div class="stat">
+                        <span class="stat-number" data-count="4">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Projetos Entregues</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="3">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Anos de Experiência</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Satisfação</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" data-animate="fade-left" data-delay="200">
+                <div class="hero-logo-wrapper">
+                    <div class="hero-logo-glow"></div>
+                    <img src="images/deepblue_logo.jpeg" alt="deepblue.ia" class="hero-logo-img">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Feito</strong> por Matheus M. Mendez</a>
-									<ul class="icons">
-										<li><a href="https://twitter.com/matheussmendez" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="https://www.instagram.com/matheus_mendezzz/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://medium.com/@matheusmendez19" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
+    <!-- Sobre Section -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Quem Somos</span>
+                <h2>Sobre a <span class="gradient-text">deepblue.ia</span></h2>
+                <p class="section-desc">Nascemos da paixão por transformar dados em inteligência acionável.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Missão</h3>
+                    <p>Democratizar o acesso à Inteligência Artificial e Data Science, ajudando empresas de todos os tamanhos a tomar decisões melhores e mais rápidas baseadas em dados.</p>
+                </div>
+                <div class="about-card glass-card" data-animate="fade-up" data-delay="200">
+                    <div class="about-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visão</h3>
+                    <p>Ser referência em soluções de IA e dados no Brasil, criando tecnologia que gera impacto real nos resultados dos nossos clientes.</p>
+                </div>
+                <div class="about-card glass-card" data-animate="fade-up" data-delay="300">
+                    <div class="about-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Valores</h3>
+                    <p>Inovação contínua, transparência, excelência técnica e compromisso com resultados mensuráveis em cada projeto que entregamos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Olá, seja bem vindo (a) ao meu portfólio de <br />
-											projetos de Ciência de Dados.</h1>
-											<p>Nessa página, eu demonstro minhas habilidades em resolver problemas de negócio utilizando conceitos e ferramentas da Ciência de Dados, através de
-											projetos com dados públicos.</p>
-										</header>
-										<p>Você vai encontrar também, minhas experências profissionais, habilidades, ferramentas e conceitos envolvendo a Ciência de Dados. <br />
-										Sinta-se à vontade para entrar em contato através dos links no final da página.</p>
-									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
-								</section>
+    <!-- Serviços Section -->
+    <section id="servicos" class="section section-alt">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">O que fazemos</span>
+                <h2>Nossos <span class="gradient-text">Serviços</span></h2>
+                <p class="section-desc">Soluções completas para a transformação digital da sua empresa.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <h3>Inteligência Artificial & Machine Learning</h3>
+                    <p>Modelos preditivos, NLP, visão computacional e agentes inteligentes que automatizam processos e geram insights a partir dos seus dados.</p>
+                    <ul class="service-tags">
+                        <li>Deep Learning</li>
+                        <li>NLP</li>
+                        <li>Computer Vision</li>
+                        <li>LLMs</li>
+                    </ul>
+                </div>
+                <div class="service-card glass-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3>Data Science & Analytics</h3>
+                    <p>Análise exploratória, modelagem estatística, dashboards e ciência de dados aplicada para decisões baseadas em evidências.</p>
+                    <ul class="service-tags">
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>Power BI</li>
+                        <li>Econometria</li>
+                    </ul>
+                </div>
+                <div class="service-card glass-card" data-animate="fade-up" data-delay="300">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                    <h3>Engenharia de Dados</h3>
+                    <p>Pipelines de dados, data lakes, ETL/ELT, infraestrutura de dados escalável na nuvem para alimentar seus projetos de IA.</p>
+                    <ul class="service-tags">
+                        <li>GCP</li>
+                        <li>AWS</li>
+                        <li>SQL</li>
+                        <li>Spark</li>
+                    </ul>
+                </div>
+                <div class="service-card glass-card" data-animate="fade-up" data-delay="400">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <h3>Desenvolvimento de Software</h3>
+                    <p>Aplicações web e mobile, APIs robustas, sistemas integrados e soluções sob medida que escalam junto com o seu negócio.</p>
+                    <ul class="service-tags">
+                        <li>Web Apps</li>
+                        <li>APIs</li>
+                        <li>Cloud</li>
+                        <li>DevOps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-								<!-- Sobre Mim -->
-								<section>
-									<header class="main">
-										<h1>Sobre Mim</h1>
-									</header>
-									<!-- Content -->
-										<h2 id="content">Meu nome é Matheus</h2>
-										<p>Sou formado em Economia pela Universidade Federal da Integração Latino-Americana (UNILA) e atualmente estou cursando o MBA em Data Science
-										and Analytics pela Universidade de São Paulo (USP). Atualmente eu trabalho com Business Intelligence e Engenharia de Dados em um E-commerce.</p>	
-										<p>No meu trabalho atual eu sou responsável pela coleta, análise e apresentação de dados para apoiar as decisões de negócios da empresa, desenvolvo relatórios personalizados em Power BI/Data Studio  para monitoramento de KPIs e acompanhamento de desempenho, e faço a utilização de ferramentas de análise de dados, como R e Python, para análises estatísticas e desenvolvimento de modelos de previsão e faço o desenvolvimento de relatórios em Powerpoint e Apresentações Google.</p>
-										<p>Meu objetivo ao construir esse portfólio é conseguir uma oportunidade de trabalhar profissionalmente como Cientista de Dados para melhorar a tomada de decisão de empresas, através da construção de soluções usando dados.</p>
-								</section>
-								<!-- Section -->
+    <!-- Projetos Section -->
+    <section id="projetos" class="section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Portfólio</span>
+                <h2>Nossos <span class="gradient-text">Projetos</span></h2>
+                <p class="section-desc">Cases reais de como dados transformam negócios.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="project-image">
+                        <img src="images/fidelidade.avif" alt="Programa de Fidelidade" loading="lazy">
+                        <div class="project-overlay">
+                            <span class="project-category">Machine Learning</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Programa de Fidelidade com Clusterização de Clientes</h3>
+                        <p>Segmentação de clientes usando técnicas não-supervisionadas para criar um programa de fidelidade, gerando potencial de <strong>$15M</strong> em receita anual incremental.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Sklearn</span>
+                            <span>Pandas</span>
+                            <span>Clustering</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card glass-card" data-animate="fade-up" data-delay="200">
+                    <div class="project-image">
+                        <img src="images/sale.avif" alt="Análise Imobiliária" loading="lazy">
+                        <div class="project-overlay">
+                            <span class="project-category">Data Science</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Análise Imobiliária para Compra e Revenda</h3>
+                        <p>Identificação de imóveis abaixo do preço de mercado e definição do preço ideal de revenda através de análise exploratória avançada de dados.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Seaborn</span>
+                            <span>Scikit-Learn</span>
+                            <span>EDA</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card glass-card" data-animate="fade-up" data-delay="300">
+                    <div class="project-image">
+                        <img src="images/bank_project.webp" alt="Marketing Bancário" loading="lazy">
+                        <div class="project-overlay">
+                            <span class="project-category">Engenharia de Dados</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Banco de Dados para Marketing Bancário</h3>
+                        <p>Arquitetura de banco de dados para campanhas de marketing bancário, com pipelines de importação, limpeza e tratamento de dados usando Python e GCP.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>GCP</span>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-								<section>
-									<header class="major">
-										<h2>Habilidades</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3>Linguagem de Programação e Banco de Dados</h3>
-												<ul>
-													<li>Python com foco em análise de dados.</li>
-													<li>Web Scraping com Python.</li>
-													<li>SQL para extração de dados.</li>
-													<li>R para modelagem estatísticas.</li>
-													<li>Banco de Dados SQLite, Postres, MySQL, Oracle e MongoDB.</li>
-													<li>Forte Conhecimento em GCP (Google Cloud Plataform).</li>
-												</ul>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Estatística e Machine Learning</h3>
-												<ul>
-													<li>Estatística descritiva (localização, dispersão, assimetria, kurtosis, densidade).</li>
-													<li>Algoritmos de regressão, classificação, clusterização e "learn to rank".</li>
-													<li>Técnicas de balanceamento dos dados, seleção de atributos e redução de dimensionalidade.</li>
-													<li>Métricas de performance dos algoritmos (RMSE, MAE, MAPE, Confusion Matrix, Precisão, Recall, Curva ROC, Curva Lift, AUC, Silhouette Score, 
-														DB-Index).</li>
-													<li>Pacotes de Machine Leaning: Sklearn e Scipy.</li>
-													<li>Econometria e Modelagem de Séries Temporais.</li>
-												</ul>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-rocket"></span>
-											<div class="content">
-												<h3>Visualização de Dados</h3>
-												<ul>
-													<li>Matplotlib, Seaborn, Plotly e Bokeh.</li>
-													<li>Power BI, Tableu, Metabase e Looker.</li>
-												</ul>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-signal"></span>
-											<div class="content">
-												<h3>Engenharia de Software e de Dados</h3>
-												<ul>
-													<li>Git, Github, Gitlab, Cookiecutter, Virtual Environment e Docker.</li>
-													<li>Streamlit, Flask, Python API's.</li>
-													<li>Cloud Heroku, AWS Amazon, Google Cloud Plataform (GCP) e Azure.</li>
-												</ul>
-											</div>
-										</article>
-									</div>
-								</section>
-							<!-- Experências -->
-							<section>
-							<header class="main">
-								<h1>Experências Profissionais</h1>
-							</header>
-								<h2 id="content">4+ Projetos Completos de Ciência de Dados</h2>
-								<p>Construção de soluções de dados para problemas de negócio, próximos dos desafios reais das empresas, utilizando dados públicos de competições de Data Science, onde eu abordei o problema desde a concepção do desafio do negócio até a publicação do algoritmo treinado em produção, utilizando ferramentas de Cloud Computing.</p>
-								
-								<h2 id="content">Analista de Business Intelligence</h2>
-								<p>Responsável pela coleta, análise e apresentação de dados para apoiar as decisões de negócios da empresa, desenvolvimento de relatórios personalizados em Power BI/Data Studio  para monitoramento de KPIs e acompanhamento de desempenho, utilização de ferramentas de análise de dados, como R e Python, para análises estatísticas e desenvolvimento de modelos de previsão, desenvolvimento de relatórios em Powerpoint e Apresentações Google.</p>
-								
-								<h2 id="content">Analista Fiscal</h2>
-								<p>Era responsável pela análise dos procedimentos fiscais, execução de rotinas contábeis, suporte à gerência em análises e elaboração de relatórios de resultados, fechamento fiscal, retenção fiscal de mercadorias, elaboração de notas fiscais para operações triangulares, auxiliava no aproveitamento de incentivos fiscais, auxiliava nos processos de exportação e importação de mercadorias,  etc.</p>	
-							</section>
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Projetos em Ciência de Dados</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="#" class="image"><img src="images/fidelidade.avif" alt="" /></a>
-											<h3>Construção de um programa de fidelidade com clusterização de clientes.</h3>
-											<p>Eu usei Python, Estatística e técnicas não-supervisionadas para segmentar um grupo de clientes com base em suas características de performance de compra, a fim de selecionar grupos de clientes para formar um programa de fidelidade com o objetivo de aumentar a receita da empresa. E o resultado dessa solução, caso fosse implementada, seria $ 15 milhões de dólares de receita anual.</p>
-											<h4>Ferramentas Utilizadas no Projeto</h4>
-															<ul>
-																<li>Git, Gitlab, Github.</li>
-																<li>Python, Pandas, Matplotlib e Seaborn.</li>
-																<li>Visual Studio Code.</li>
-															</ul>
-											<ul class="actions">
-												<li><a href="#" class="button">SAIBA MAIS</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/sale.avif" alt="" /></a>
-											<h3>Identificação de imóveis para compra e revenda a fim de maximizar o lucro</h3>
-											<p>Identificação de imóveis abaixo do preço médio de venda e definição do preço ideal de revenda, a partir de uma análise exploratória de dados em Python.</p>
-											<h4>Ferramentas Utilizadas no Projeto</h4>
-															<ul>
-																<li>Git, Gitlab, Github.</li>
-																<li>Python, Pandas, Matplotlib e Seaborn.</li>
-																<li>Scikit-Learn.</li>
-																<li>Visual Studio Code.</li>
-															</ul>
-											<ul class="actions">
-												<li><a href="#" class="button">SAIBA MAIS</a></li>
-											</ul>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/bank_project.webp" alt="" /></a>
-											<h3>Projetando um banco de dados para marketing bancário</h3>
-											<p>Este projeto envolve a criação de um banco de dados abrangente para armazenar e gerenciar informações de clientes para campanhas de marketing de um banco. O projeto utiliza Python para importar, carregar e limpar os dados para garantir sua qualidade e confiabilidade.</p>
-											<h4>Ferramentas Utilizadas no Projeto</h4>
-															<ul>
-																<li>Git, Gitlab, Github.</li>
-																<li>Python, Pandas.</li>
-																<li>GCP.</li>
-																<li>Visual Studio Code.</li>
-															</ul>
-											<ul class="actions">
-												<li><a href="#" class="button">SAIBA MAIS</a></li>
-											</ul>
-										</article>
-										
-									</div>
-								</section>
+    <!-- Equipe Section -->
+    <section id="equipe" class="section section-alt">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Nosso Time</span>
+                <h2>Quem está <span class="gradient-text">por trás</span></h2>
+                <p class="section-desc">Pessoas apaixonadas por dados e tecnologia.</p>
+            </div>
+            <div class="team-section">
+                <div class="team-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="team-info">
+                        <h3>Matheus M. Mendez</h3>
+                        <span class="team-role">Fundador & Lead Data Scientist</span>
+                        <p>Economista pela UNILA, MBA em Data Science & Analytics pela USP. Experiência em Business Intelligence, Engenharia de Dados, modelagem estatística e desenvolvimento de soluções de IA em produção.</p>
+                        <div class="team-skills">
+                            <span>Python</span>
+                            <span>R</span>
+                            <span>SQL</span>
+                            <span>Machine Learning</span>
+                            <span>Power BI</span>
+                            <span>GCP</span>
+                            <span>Docker</span>
+                            <span>Econometria</span>
+                        </div>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://medium.com/@matheusmendez19" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                            <a href="https://www.instagram.com/matheus_mendezzz/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-							<!-- Contato -->
-								<section>
-								<header class="major">
-									<h2>Entre em Contato</h2>
-										</header>
-										<p>Sinta-se a vontade para entrar em contato.</p>
-										<ul class="contact">
-											<li class="icon solid fa-envelope"><a href="#">matheusmendez19@gmail.com</a></li>
-											<li class="icon brands fa-linkedin"><a href="www.linkedin.com/in/matheus-mendez">LinkedIn</a></li>
-											<li class="icon solid fa-phone">(45) 99801-0609</li>
-											</ul>
-										</section>
-						</div>
-					</div>
-			</div>
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content glass-card" data-animate="fade-up">
+                <div class="cta-bg-orb"></div>
+                <h2>Pronto para transformar seus dados em <span class="gradient-text">resultados</span>?</h2>
+                <p>Vamos conversar sobre como a deepblue.ia pode acelerar a transformação digital do seu negócio.</p>
+                <a href="#contato" class="btn btn-primary btn-lg">
+                    <span>Iniciar Conversa</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Contato Section -->
+    <section id="contato" class="section section-alt">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Fale Conosco</span>
+                <h2>Entre em <span class="gradient-text">Contato</span></h2>
+                <p class="section-desc">Estamos prontos para ajudar no seu próximo projeto.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>E-mail</h4>
+                    <a href="mailto:matheusmendez19@gmail.com">matheusmendez19@gmail.com</a>
+                </div>
+                <div class="contact-card glass-card" data-animate="fade-up" data-delay="200">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <h4>LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener">matheus-mendez</a>
+                </div>
+                <div class="contact-card glass-card" data-animate="fade-up" data-delay="300">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4>Telefone</h4>
+                    <a href="tel:+5545998010609">(45) 99801-0609</a>
+                </div>
+                <div class="contact-card glass-card" data-animate="fade-up" data-delay="400">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h4>GitHub</h4>
+                    <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener">matheusmendez-ask</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	</body>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/deepblue_logo.jpeg" alt="deepblue.ia" class="footer-logo">
+                    <span class="footer-logo-text">deep<span class="accent">blue</span><span class="suffix">.ia</span></span>
+                    <p>Inteligência Artificial que transforma dados em resultados.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@matheusmendez19" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                        <a href="https://www.instagram.com/matheus_mendezzz/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 deepblue.ia — Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = navbar.offsetHeight + 20;
+                    const position = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top: position, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll animations with Intersection Observer
+        const animateElements = document.querySelectorAll('[data-animate]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('animated');
+                    }, parseInt(delay));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        animateElements.forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counters = document.querySelectorAll('[data-count]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-count'));
+                    let current = 0;
+                    const increment = target / 40;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            entry.target.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 150;
+                if (window.scrollY >= top) current = section.getAttribute('id');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        });
+    </script>
+</body>
 </html>
