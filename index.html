@@ -67,7 +67,8 @@
 
     <!-- Hero Section (Fullscreen Video) -->
     <section id="hero">
-        <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline id="heroVideo">
+        <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline id="heroVideo"
+            poster="images/hero_bg.jpg">
             <source
                 src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda.mp4"
                 type="video/mp4">
@@ -465,24 +466,37 @@
             link.addEventListener('click', closeMobileNav);
         });
 
-        // Force Video Autoplay Logic
+        // Force Video Autoplay Logic (Aggressive)
         const heroVideo = document.getElementById('heroVideo');
 
-        const forcePlay = () => {
+        const attemptPlay = () => {
             if (heroVideo && heroVideo.paused) {
-                heroVideo.muted = true; // Crucial for autoplay
-                heroVideo.play().catch(err => {
-                    console.log("Autoplay prevent handled:", err);
-                    // Add touch listener for iOS low power mode fallback
-                    document.addEventListener('touchstart', () => {
-                        heroVideo.play();
-                    }, { once: true });
+                heroVideo.muted = true;
+                heroVideo.play().then(() => {
+                    // Success! Remove listeners
+                    removeInteractionListeners();
+                }).catch(err => {
+                    console.log("Autoplay paused, waiting for interaction");
                 });
             }
         };
 
-        window.addEventListener('load', forcePlay);
-        document.addEventListener('DOMContentLoaded', forcePlay);
+        const interactionEvents = ['click', 'touchstart', 'scroll', 'keydown'];
+
+        function removeInteractionListeners() {
+            interactionEvents.forEach(event => {
+                document.removeEventListener(event, attemptPlay);
+            });
+        }
+
+        // Try immediately
+        window.addEventListener('load', attemptPlay);
+        document.addEventListener('DOMContentLoaded', attemptPlay);
+
+        // Try on any user interaction (Fallback)
+        interactionEvents.forEach(event => {
+            document.addEventListener(event, attemptPlay, { passive: true });
+        });
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
