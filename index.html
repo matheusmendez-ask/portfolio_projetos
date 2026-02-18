@@ -51,14 +51,23 @@
         </div>
     </nav>
 
-    <!-- Mobile Nav Drawer (Hidden by default, shown via JS) -->
+    <!-- Mobile Nav Drawer (Static for reliability) -->
     <div class="mobile-nav-overlay" id="mobileNav">
-        <!-- Content will be handled by JS or simple toggle -->
+        <div class="mobile-nav-content glass-card">
+            <button class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-times"></i></button>
+            <ul class="mobile-nav-list">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato" class="btn btn-primary">Fale Conosco</a></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Hero Section (Fullscreen Video) -->
     <section id="hero">
-        <video class="hero-video-bg" autoplay muted loop playsinline>
+        <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline id="heroVideo">
             <source
                 src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda.mp4"
                 type="video/mp4">
@@ -427,44 +436,53 @@
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Mobile nav toggle
-        // Simplified mobile nav for new layout
+        // Mobile Nav Logic
         const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        // On mobile, repurpose navLinks or create a drawer
-        // For new layout, navLinks are hidden on mobile per spec. We might need a drawer.
-        // Let's implement a simple drawer toggle if mobileNav exists
         const mobileNavOverlay = document.getElementById('mobileNav');
+        const mobileNavClose = document.getElementById('mobileNavClose');
+        const mobileNavLinks = mobileNavOverlay.querySelectorAll('a');
 
-        navToggle.addEventListener('click', () => {
-            // Create mobile menu dynamically if empty
-            if (!mobileNavOverlay.innerHTML.trim()) {
-                mobileNavOverlay.innerHTML = `
-                    <div class="mobile-nav-content glass-card">
-                        <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
-                        <ul class="mobile-nav-list">
-                            <li><a href="#servicos">Serviços</a></li>
-                            <li><a href="#projetos">Projetos</a></li>
-                            <li><a href="#sobre">Sobre</a></li>
-                            <li><a href="#equipe">Equipe</a></li>
-                            <li><a href="#contato" class="btn btn-primary">Fale Conosco</a></li>
-                        </ul>
-                    </div>
-                 `;
-
-                // Re-attach close event
-                mobileNavOverlay.querySelector('.mobile-nav-close').addEventListener('click', () => {
-                    mobileNavOverlay.classList.remove('active');
-                });
-
-                mobileNavOverlay.querySelectorAll('a').forEach(l => {
-                    l.addEventListener('click', () => mobileNavOverlay.classList.remove('active'));
-                });
-            }
+        function openMobileNav() {
             mobileNavOverlay.classList.add('active');
+        }
+
+        function closeMobileNav() {
+            mobileNavOverlay.classList.remove('active');
+        }
+
+        if (navToggle) {
+            navToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent immediate close if bubbling
+                openMobileNav();
+            });
+        }
+
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', closeMobileNav);
+        }
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMobileNav);
         });
 
+        // Force Video Autoplay Logic
+        const heroVideo = document.getElementById('heroVideo');
+
+        const forcePlay = () => {
+            if (heroVideo && heroVideo.paused) {
+                heroVideo.muted = true; // Crucial for autoplay
+                heroVideo.play().catch(err => {
+                    console.log("Autoplay prevent handled:", err);
+                    // Add touch listener for iOS low power mode fallback
+                    document.addEventListener('touchstart', () => {
+                        heroVideo.play();
+                    }, { once: true });
+                });
+            }
+        };
+
+        window.addEventListener('load', forcePlay);
+        document.addEventListener('DOMContentLoaded', forcePlay);
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
