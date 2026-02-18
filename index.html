@@ -25,79 +25,74 @@
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- Navbar (Web3 Style) -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <img src="images/deepblue_logo.jpeg" alt="deepblue.ia logo" class="nav-logo-img">
-                <span class="nav-logo-text">deep<span class="accent">blue</span><span class="suffix">.ia</span></span>
+            <div class="nav-left">
+                <a href="#hero" class="nav-logo">
+                    <img src="images/deepblue_logo.jpeg" alt="deepblue.ia logo" class="nav-logo-img">
+                    <span class="nav-logo-text">deep<span class="gradient-text">blue</span>.ia</span>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#servicos">Serviços <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#projetos">Projetos <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#sobre">Sobre <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#equipe">Equipe <i class="fas fa-chevron-down"></i></a></li>
+                </ul>
+            </div>
+
+            <a href="#contato" class="nav-btn-pill">
+                <span class="nav-btn-inner">Fale Conosco</span>
             </a>
+
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
+                <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#equipe">Equipe</a></li>
-                <li><a href="#contato" class="nav-cta">Contato</a></li>
-            </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Mobile Nav Drawer (Hidden by default, shown via JS) -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <!-- Content will be handled by JS or simple toggle -->
+    </div>
+
+    <!-- Hero Section (Fullscreen Video) -->
     <section id="hero">
-        <div class="hero-bg-effects">
-            <div class="hero-orb hero-orb-1"></div>
-            <div class="hero-orb hero-orb-2"></div>
-            <div class="hero-orb hero-orb-3"></div>
-            <div class="hero-grid"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge" data-animate="fade-up">
-                    <i class="fas fa-microchip"></i>
-                    <span>Inteligência Artificial & Data Science</span>
-                </div>
-                <h1 data-animate="fade-up" data-delay="100">
-                    Transformamos <span class="gradient-text">dados</span> em <span
-                        class="gradient-text">resultados</span>
-                </h1>
-                <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
-                    Soluções inteligentes de IA, Data Science, Engenharia de Dados e Desenvolvimento de Software para
-                    acelerar a transformação digital do seu negócio.
-                </p>
-                <div class="hero-actions" data-animate="fade-up" data-delay="300">
-                    <a href="#servicos" class="btn btn-primary">
-                        <span>Nossos Serviços</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contato" class="btn btn-outline">
-                        <span>Fale Conosco</span>
-                    </a>
-                </div>
-                <div class="hero-stats" data-animate="fade-up" data-delay="400">
-                    <div class="stat">
-                        <span class="stat-number" data-count="4">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Projetos Entregues</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="3">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Anos de Experiência</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
-                        <span class="stat-label">Satisfação</span>
-                    </div>
-                </div>
+        <video class="hero-video-bg" autoplay muted loop playsinline poster="images/pic10.jpg">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-background-1610-large.mp4"
+                type="video/mp4">
+            <!-- Fallback if video fails -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content" data-animate="fade-up">
+            <!-- Badge -->
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Disponível para novos projetos de <strong>IA & Data</strong></span>
             </div>
-            <div class="hero-visual" data-animate="fade-left" data-delay="200">
-                <div class="hero-logo-wrapper">
-                    <div class="hero-logo-glow"></div>
-                    <img src="images/deepblue_logo.jpeg" alt="deepblue.ia" class="hero-logo-img">
-                </div>
+
+            <!-- Heading -->
+            <h1 data-animate="fade-up" data-delay="100">
+                A Inteligência no centro<br>da experiência
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                Potencializando negócios com soluções integradas e conexões em tempo real. A deepblue.ia é a base para
+                empresas que buscam velocidade, escala e precisão no futuro.
+            </p>
+
+            <!-- CTA -->
+            <div class="hero-cta" data-animate="fade-up" data-delay="300">
+                <a href="#contato" class="btn-pill-white">
+                    <span class="btn-pill-inner">Iniciar Projeto</span>
+                </a>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <span>Scroll</span>
             <div class="scroll-line"></div>
@@ -105,7 +100,7 @@
     </section>
 
     <!-- Sobre Section -->
-    <section id="sobre" class="section">
+    <section id="sobre" class="section section-alt">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
                 <span class="section-tag">Quem Somos</span>
@@ -142,7 +137,7 @@
     </section>
 
     <!-- Serviços Section -->
-    <section id="servicos" class="section section-alt">
+    <section id="servicos" class="section">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
                 <span class="section-tag">O que fazemos</span>
@@ -219,7 +214,7 @@
     </section>
 
     <!-- Projetos Section -->
-    <section id="projetos" class="section">
+    <section id="projetos" class="section section-alt">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
                 <span class="section-tag">Portfólio</span>
@@ -289,7 +284,7 @@
     </section>
 
     <!-- Equipe Section -->
-    <section id="equipe" class="section section-alt">
+    <section id="equipe" class="section">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
                 <span class="section-tag">Nosso Time</span>
@@ -415,7 +410,7 @@
                             aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://medium.com/@matheusmendez19" target="_blank" rel="noopener"
                             aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-                        <a href="https://www.instagram.com/matheus_mendezzz/" target="_blank" rel="noopener"
+                        <a href="https://www.instagram.com/deepblue.ia/" target="_blank" rel="noopener"
                             aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -434,18 +429,43 @@
         });
 
         // Mobile nav toggle
+        // Simplified mobile nav for new layout
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
+
+        // On mobile, repurpose navLinks or create a drawer
+        // For new layout, navLinks are hidden on mobile per spec. We might need a drawer.
+        // Let's implement a simple drawer toggle if mobileNav exists
+        const mobileNavOverlay = document.getElementById('mobileNav');
+
         navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            // Create mobile menu dynamically if empty
+            if (!mobileNavOverlay.innerHTML.trim()) {
+                mobileNavOverlay.innerHTML = `
+                    <div class="mobile-nav-content glass-card">
+                        <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+                        <ul class="mobile-nav-list">
+                            <li><a href="#servicos">Serviços</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#equipe">Equipe</a></li>
+                            <li><a href="#contato" class="btn btn-primary">Fale Conosco</a></li>
+                        </ul>
+                    </div>
+                 `;
+
+                // Re-attach close event
+                mobileNavOverlay.querySelector('.mobile-nav-close').addEventListener('click', () => {
+                    mobileNavOverlay.classList.remove('active');
+                });
+
+                mobileNavOverlay.querySelectorAll('a').forEach(l => {
+                    l.addEventListener('click', () => mobileNavOverlay.classList.remove('active'));
+                });
+            }
+            mobileNavOverlay.classList.add('active');
         });
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
+
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -475,43 +495,6 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         animateElements.forEach(el => observer.observe(el));
-
-        // Counter animation
-        const counters = document.querySelectorAll('[data-count]');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.getAttribute('data-count'));
-                    let current = 0;
-                    const increment = target / 40;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            entry.target.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            entry.target.textContent = Math.floor(current);
-                        }
-                    }, 30);
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        counters.forEach(c => counterObserver.observe(c));
-
-        // Active nav link on scroll
-        const sections = document.querySelectorAll('section[id]');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop - 150;
-                if (window.scrollY >= top) current = section.getAttribute('id');
-            });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-            });
-        });
     </script>
 </body>
 
