@@ -258,9 +258,9 @@ img {
     align-items: center;
     justify-content: center;
     /* Vertically centered */
-    padding-top: 200px;
+    padding-top: 160px;
     /* As requested desktop padding */
-    padding-bottom: 102px;
+    padding-bottom: 140px;
     text-align: center;
     overflow: hidden;
     background: #000;
@@ -402,7 +402,7 @@ img {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 32px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -883,6 +883,7 @@ img {
 .mobile-nav-list a:last-child {
     border-bottom: none;
 }
+
 /* ===========================
    CTA Section
    =========================== */
@@ -972,4 +973,3 @@ img {
     padding: 18px 48px;
     font-size: 1.1rem;
 }
-
