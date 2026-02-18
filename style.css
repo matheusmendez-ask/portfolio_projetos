@@ -883,3 +883,93 @@ img {
 .mobile-nav-list a:last-child {
     border-bottom: none;
 }
+/* ===========================
+   CTA Section
+   =========================== */
+.cta-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.cta-content {
+    position: relative;
+    text-align: center;
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(13, 20, 36, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    border-radius: var(--radius-lg);
+}
+
+.cta-bg-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.cta-content h2 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.cta-content p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Base Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all var(--transition);
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
+    background: #fff;
+    color: #000;
+}
+
+.btn-lg {
+    padding: 18px 48px;
+    font-size: 1.1rem;
+}
+
