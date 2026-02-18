@@ -884,6 +884,17 @@ img {
     border-bottom: none;
 }
 
+.mobile-nav-list .btn {
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+    color: #000 !important;
+    /* Force black text on white button */
+    padding: 14px 24px;
+    /* Restore padding */
+    border-radius: 100px;
+}
+
 /* ===========================
    CTA Section
    =========================== */
