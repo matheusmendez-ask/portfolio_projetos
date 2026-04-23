@@ -55,6 +55,24 @@ body {
 }
 
 /* ===========================
+   Custom Scrollbar
+   =========================== */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    border: 3px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+/* ===========================
    Utilities
    =========================== */
 .container {
@@ -512,13 +530,7 @@ img {
     grid-template-columns: repeat(4, 1fr);
 }
 
-.project-card,
-.service-card,
-.about-card,
-.team-card,
-.contact-card {
-    /* Base styles inherited from .glass-card */
-}
+
 
 .about-card {
     padding: 36px 28px;
@@ -542,21 +554,132 @@ img {
     text-align: center;
 }
 
+/* Contact Form Styles */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.contact-form-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font);
+    font-size: 1rem;
+    transition: all var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+}
+
+button.btn-pill-white {
+    border: none;
+    cursor: pointer;
+    font-family: var(--font);
+    appearance: none;
+}
+
+.w-100 {
+    width: 100%;
+    text-align: center;
+    border-radius: var(--radius-sm);
+}
+
+.w-100 .btn-pill-inner {
+    border-radius: var(--radius-sm) !important;
+}
+
+.contact-grid-side {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-content: start;
+}
+
 /* Icons & Details */
 .about-icon,
 .service-icon,
 .contact-icon {
     width: 64px;
     height: 64px;
-    border-radius: 16px;
-    background: var(--gradient-soft);
-    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.05), 0 8px 16px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--accent-cyan);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico suave */
+}
+
+/* Gradiente no ícone para dar profundidade e brilho base */
+.about-icon i,
+.service-icon i,
+.contact-icon i {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0, 212, 255, 0.4));
+    transition: all 0.4s ease;
+}
+
+/* Efeito Glow e 3D impressionante ao passar o mouse no card pai */
+.glass-card:hover .about-icon,
+.glass-card:hover .service-icon,
+.glass-card:hover .contact-icon {
+    transform: translateY(-6px) scale(1.08); /* Levanta e cresce a caixa do ícone */
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 212, 255, 0.25) 100%);
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: inset 0 0 25px rgba(0, 212, 255, 0.2), 0 12px 24px rgba(0, 212, 255, 0.2);
+}
+
+.glass-card:hover .about-icon i,
+.glass-card:hover .service-icon i,
+.glass-card:hover .contact-icon i {
+    -webkit-text-fill-color: #fff; /* Fica branco sólido no hover para contrastar */
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.9)); /* Brilho neon intenso interno */
+    transform: scale(1.1); /* Ícone interno acompanha o crescimento */
 }
 
 .service-icon-wrap {
@@ -764,6 +887,10 @@ img {
 
     .contact-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
     }
 }
 

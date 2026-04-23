@@ -356,35 +356,72 @@
                 <h2>Entre em <span class="gradient-text">Contato</span></h2>
                 <p class="section-desc">Estamos prontos para ajudar no seu próximo projeto.</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card glass-card" data-animate="fade-up" data-delay="100">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h4>E-mail</h4>
-                    <a href="mailto:matheusmendez19@gmail.com">matheusmendez19@gmail.com</a>
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-container glass-card" data-animate="fade-up" data-delay="100">
+                    <form action="https://formsubmit.co/matheusmendez19@gmail.com" method="POST" class="contact-form">
+                        <!-- FormSubmit Config -->
+                        <input type="hidden" name="_subject" value="Novo Contato via Site - deepblue.ia!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Como podemos ajudar o seu negócio?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-pill-white w-100">
+                            <span class="btn-pill-inner">Enviar Mensagem <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></span>
+                        </button>
+                    </form>
                 </div>
-                <div class="contact-card glass-card" data-animate="fade-up" data-delay="200">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin-in"></i>
+
+                <!-- Info Cards -->
+                <div class="contact-grid-side">
+                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="200">
+                        <div class="contact-icon">
+                            <a href="mailto:matheusmendez19@gmail.com" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <h4>E-mail</h4>
+                        <a href="mailto:matheusmendez19@gmail.com">matheusmendez19@gmail.com</a>
                     </div>
-                    <h4>LinkedIn</h4>
-                    <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank"
-                        rel="noopener">matheus-mendez</a>
-                </div>
-                <div class="contact-card glass-card" data-animate="fade-up" data-delay="300">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
+                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="300">
+                        <div class="contact-icon">
+                            <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank"
+                            rel="noopener">matheus-mendez</a>
                     </div>
-                    <h4>Telefone</h4>
-                    <a href="tel:+5545998010609">(45) 99801-0609</a>
-                </div>
-                <div class="contact-card glass-card" data-animate="fade-up" data-delay="400">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
+                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="400">
+                        <div class="contact-icon">
+                            <a href="https://wa.me/5545998010609?text=Oi%2C%20vim%20pelo%20site" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/5545998010609?text=Oi%2C%20vim%20pelo%20site" target="_blank" rel="noopener">(45) 99801-0609</a>
                     </div>
-                    <h4>GitHub</h4>
-                    <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener">matheusmendez-ask</a>
+                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="500">
+                        <div class="contact-icon">
+                            <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener">matheusmendez-ask</a>
+                    </div>
                 </div>
             </div>
         </div>
