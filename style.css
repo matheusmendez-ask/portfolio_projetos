@@ -790,7 +790,7 @@ button.btn-pill-white {
     flex-wrap: wrap;
     gap: 8px;
     list-style: none;
-    margin-top: auto;
+    margin-top: 24px;
 }
 
 .service-tags li {
