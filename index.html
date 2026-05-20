@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>deepblue.ia — Inteligência Artificial & Data Science</title>
+    <title>deepblue — Dados, Software & Estratégia</title>
     <meta name="description"
-        content="deepblue.ia — Transformamos dados em resultados com Inteligência Artificial, Data Science, Engenharia de Dados e Desenvolvimento de Software." />
+        content="Consultoria boutique de dados, software e estratégia. Trabalho com empresas que levam dados a sério — do diagnóstico ao código em produção." />
     <meta name="keywords"
-        content="inteligência artificial, data science, engenharia de dados, machine learning, deep learning, desenvolvimento de software" />
-    <meta name="author" content="deepblue.ia" />
-    <meta property="og:title" content="deepblue.ia — IA que transforma dados em resultados" />
+        content="consultoria de dados, data science, engenharia de dados, software, business intelligence, analytics" />
+    <meta name="author" content="deepblue · Matheus M. Mendez" />
+    <meta property="og:title" content="deepblue — Dados, Software & Estratégia" />
     <meta property="og:description"
-        content="Soluções de IA, Data Science, Engenharia de Dados e Desenvolvimento de Software para acelerar o seu negócio." />
+        content="Consultoria boutique para empresas que querem decisões melhores e produtos sólidos." />
     <meta property="og:type" content="website" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -25,24 +25,24 @@
 </head>
 
 <body>
-    <!-- Navbar (Web3 Style) -->
+    <!-- Navbar -->
     <nav id="navbar">
         <div class="nav-container">
             <div class="nav-left">
                 <a href="#hero" class="nav-logo">
-                    <img src="images/deepblue_logo.jpeg" alt="deepblue.ia logo" class="nav-logo-img">
-                    <span class="nav-logo-text">deep<span class="gradient-text">blue</span>.ia</span>
+                    <img src="images/deepblue_logo.jpeg" alt="deepblue logo" class="nav-logo-img">
+                    <span class="nav-logo-text">deep<span class="gradient-text">blue</span></span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#servicos">Serviços <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#projetos">Projetos <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#sobre">Sobre <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#equipe">Equipe <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#manifesto">Manifesto</a></li>
+                    <li><a href="#equipe">Quem sou</a></li>
                 </ul>
             </div>
 
             <a href="#contato" class="nav-btn-pill">
-                <span class="nav-btn-inner">Fale Conosco</span>
+                <span class="nav-btn-inner">Fale com a gente <i class="fas fa-arrow-right"></i></span>
             </a>
 
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -51,429 +51,572 @@
         </div>
     </nav>
 
-    <!-- Mobile Nav Drawer (Static for reliability) -->
+    <!-- Mobile Nav -->
     <div class="mobile-nav-overlay" id="mobileNav">
-        <div class="mobile-nav-content glass-card">
+        <div class="mobile-nav-content">
             <button class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-times"></i></button>
             <ul class="mobile-nav-list">
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#equipe">Equipe</a></li>
-                <li><a href="#contato" class="btn btn-primary">Fale Conosco</a></li>
+                <li><a href="#manifesto">Manifesto</a></li>
+                <li><a href="#equipe">Quem sou</a></li>
+                <li><a href="#contato" class="btn-primary">Fale com a gente</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Hero Section (Fullscreen Video) -->
+    <!-- Hero -->
     <section id="hero">
-        <video class="hero-video-bg" autoplay muted loop playsinline webkit-playsinline id="heroVideo">
-            <source
-                src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda.mp4"
-                type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
 
-        <div class="hero-content" data-animate="fade-up">
-            <!-- Badge -->
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        <div class="hero-overlay" id="heroOverlay"></div>
+
+        <div class="hero-content" data-animate>
+            <div class="hero-eyebrow">deepblue · consultoria · 2026</div>
+
             <div class="hero-badge">
                 <span class="hero-badge-dot"></span>
-                <span>Disponível para novos projetos de <strong>IA & Data</strong></span>
+                <span>Aceitando novos projetos para o <strong>segundo semestre</strong></span>
             </div>
 
-            <!-- Heading -->
-            <h1 data-animate="fade-up" data-delay="100">
-                Inteligência que<br>transforma o futuro
-            </h1>
+            <h1>Dados, software <em>e estratégia.</em></h1>
 
-            <!-- Subtitle -->
-            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
-                Potencializando negócios com soluções integradas e conexões em tempo real. A deepblue.ia é a base para
-                empresas que buscam velocidade, escala e precisão no futuro.
+            <p class="hero-subtitle">
+                Consultoria boutique para empresas que levam dados a sério. Do diagnóstico ao código em produção, com método claro, time enxuto e entregas que se sustentam no tempo.
             </p>
 
-            <!-- CTA -->
-            <div class="hero-cta" data-animate="fade-up" data-delay="300">
+            <div class="hero-cta">
                 <a href="#contato" class="btn-pill-white">
-                    <span class="btn-pill-inner">Iniciar Projeto</span>
+                    <span class="btn-pill-inner">Iniciar conversa <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="#projetos" class="btn-pill-ghost">
+                    Ver portfólio
                 </a>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <span>Scroll</span>
             <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Sobre Section -->
-    <section id="sobre" class="section section-alt">
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Dados</span><span class="sep">✦</span>
+            <span><em>Software</em></span><span class="sep">✦</span>
+            <span>Estratégia</span><span class="sep">✦</span>
+            <span><em>Produto</em></span><span class="sep">✦</span>
+            <span>Analytics</span><span class="sep">✦</span>
+            <span><em>Engenharia</em></span><span class="sep">✦</span>
+            <span>BI</span><span class="sep">✦</span>
+            <span><em>Modelagem</em></span><span class="sep">✦</span>
+            <!-- duplicate for seamless loop -->
+            <span>Dados</span><span class="sep">✦</span>
+            <span><em>Software</em></span><span class="sep">✦</span>
+            <span>Estratégia</span><span class="sep">✦</span>
+            <span><em>Produto</em></span><span class="sep">✦</span>
+            <span>Analytics</span><span class="sep">✦</span>
+            <span><em>Engenharia</em></span><span class="sep">✦</span>
+            <span>BI</span><span class="sep">✦</span>
+            <span><em>Modelagem</em></span><span class="sep">✦</span>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <section class="stats-section">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Quem Somos</span>
-                <h2>Sobre a <span class="gradient-text">deepblue.ia</span></h2>
-                <p class="section-desc">Nascemos da paixão por transformar dados em inteligência acionável.</p>
+            <div class="stats-header">
+                <span class="stats-tag">Em números</span>
+                <p class="stats-headline">Cinco anos. <em>Resultado mensurável.</em></p>
             </div>
-            <div class="about-grid">
-                <div class="about-card glass-card" data-animate="fade-up" data-delay="100">
-                    <div class="about-icon">
-                        <i class="fas fa-bullseye"></i>
+            <div class="stats-grid">
+                <div class="stat-item" data-animate>
+                    <div class="stat-eyebrow">
+                        <span class="stat-index">01 / 04</span>
+                        <span class="stat-ico"><i class="fas fa-arrow-trend-up"></i></span>
                     </div>
-                    <h3>Missão</h3>
-                    <p>Democratizar o acesso à Inteligência Artificial e Data Science, ajudando empresas de todos os
-                        tamanhos a tomar decisões melhores e mais rápidas baseadas em dados.</p>
+                    <div class="stat-num" data-count="5"><span class="num">0</span><span class="suffix">+</span></div>
+                    <div class="stat-label">Anos de experiência</div>
+                    <div class="stat-sub">desde 2019 · contínuo</div>
                 </div>
-                <div class="about-card glass-card" data-animate="fade-up" data-delay="200">
-                    <div class="about-icon">
-                        <i class="fas fa-eye"></i>
+                <div class="stat-item" data-animate data-delay="100">
+                    <div class="stat-eyebrow">
+                        <span class="stat-index">02 / 04</span>
+                        <span class="stat-ico"><i class="fas fa-check"></i></span>
                     </div>
-                    <h3>Visão</h3>
-                    <p>Ser referência em soluções de IA e dados no Brasil, criando tecnologia que gera impacto real nos
-                        resultados dos nossos clientes.</p>
+                    <div class="stat-num" data-count="10"><span class="num">0</span><span class="suffix">+</span></div>
+                    <div class="stat-label">Projetos entregues</div>
+                    <div class="stat-sub">em produção · clientes BR</div>
                 </div>
-                <div class="about-card glass-card" data-animate="fade-up" data-delay="300">
-                    <div class="about-icon">
-                        <i class="fas fa-gem"></i>
+                <div class="stat-item" data-animate data-delay="200">
+                    <div class="stat-eyebrow">
+                        <span class="stat-index">03 / 04</span>
+                        <span class="stat-ico"><i class="fas fa-chart-line"></i></span>
                     </div>
-                    <h3>Valores</h3>
-                    <p>Inovação contínua, transparência, excelência técnica e compromisso com resultados mensuráveis em
-                        cada projeto que entregamos.</p>
+                    <div class="stat-num"><span class="prefix">$</span><span class="num" data-count="15">0</span><span class="suffix">M+</span></div>
+                    <div class="stat-label">Em receita gerada</div>
+                    <div class="stat-sub">estimativa para clientes</div>
+                </div>
+                <div class="stat-item" data-animate data-delay="300">
+                    <div class="stat-eyebrow">
+                        <span class="stat-index">04 / 04</span>
+                        <span class="stat-ico"><i class="fas fa-globe"></i></span>
+                    </div>
+                    <div class="stat-num"><span class="num" data-count="100">0</span><span class="suffix">%</span></div>
+                    <div class="stat-label">Remoto · global</div>
+                    <div class="stat-sub">fuso flexível · async-first</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços Section -->
-    <section id="servicos" class="section">
+    <!-- Sobre -->
+    <section id="sobre" class="section">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">O que fazemos</span>
-                <h2>Nossos <span class="gradient-text">Serviços</span></h2>
-                <p class="section-desc">Soluções completas para a transformação digital da sua empresa.</p>
+            <div class="section-header" data-animate>
+                <span class="section-tag">A consultoria</span>
+                <h2>Pequena por escolha,<br><em>séria por princípio.</em></h2>
             </div>
+
+            <div class="about-layout">
+                <p class="about-lede" data-animate>
+                    A <em>deepblue</em> não promete transformação digital. Promete clareza, código bem feito e decisões que se sustentam.
+                </p>
+
+                <div class="about-text" data-animate data-delay="150">
+                    <p>
+                        Trabalho em <strong>times pequenos</strong> e focados, com um sênior dedicado em cada frente. Sem revenda de promessa, sem deck de 80 slides, sem terceirização de pensamento.
+                    </p>
+                    <p>
+                        Cada projeto começa com a pergunta certa — não com o modelo mais sofisticado que aparecer no LinkedIn naquele mês. O que entrego é o que sustenta operação no dia seguinte.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-pillars">
+                <div class="about-card" data-animate>
+                    <div class="about-icon"><i class="fas fa-compass"></i></div>
+                    <h3>Diagnóstico antes de solução</h3>
+                    <p>Entendo o problema, o time e o contexto antes de propor qualquer linha de código. Mais escuta, menos achismo.</p>
+                </div>
+                <div class="about-card" data-animate data-delay="100">
+                    <div class="about-icon"><i class="fas fa-pen-ruler"></i></div>
+                    <h3>Trabalho artesanal, em escala</h3>
+                    <p>Cada entrega tem nome, autor e revisão. Mesmo quando o destino é produção crítica e milhões de linhas.</p>
+                </div>
+                <div class="about-card" data-animate data-delay="200">
+                    <div class="about-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>Mensurável ou não conta</h3>
+                    <p>Toda entrega vem com critério de sucesso definido antes — não fica decidido na sala de apresentação no final.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section id="manifesto" class="manifesto">
+        <div class="container">
+            <div class="manifesto-content">
+                <div class="manifesto-tag" data-animate>Manifesto · Como trabalhamos</div>
+                <ul class="manifesto-list">
+                    <li data-animate>
+                        <span class="num">01</span>
+                        <span>Pergunta <em>antes</em> de modelo.</span>
+                    </li>
+                    <li data-animate data-delay="100">
+                        <span class="num">02</span>
+                        <span>Código que <em>cabe</em> na cabeça.</span>
+                    </li>
+                    <li data-animate data-delay="200">
+                        <span class="num">03</span>
+                        <span>Dados como <em>matéria-prima</em>, não destino.</span>
+                    </li>
+                    <li data-animate data-delay="300">
+                        <span class="num">04</span>
+                        <span>Mensurável <em>ou não conta</em>.</span>
+                    </li>
+                    <li data-animate data-delay="400">
+                        <span class="num">05</span>
+                        <span>O cliente sai <em>mais autônomo</em>, não mais dependente.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços — Bento -->
+    <section id="servicos" class="section section-alt">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">Frentes de trabalho</span>
+                <h2>Como podemos <em>ajudar.</em></h2>
+                <p class="section-desc">Quatro frentes combinadas conforme o problema — nunca como pacote pronto.</p>
+            </div>
+
             <div class="services-grid">
-                <div class="service-card glass-card" data-animate="fade-up" data-delay="100">
-                    <div class="service-icon-wrap">
-                        <div class="service-icon">
-                            <i class="fas fa-brain"></i>
+                <div class="service-card" data-animate>
+                    <div class="service-head">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="service-meta">
+                            <span class="service-num">01 / 04</span>
+                            <span class="service-arrow"><i class="fas fa-arrow-up"></i></span>
                         </div>
                     </div>
-                    <h3>Inteligência Artificial & Machine Learning</h3>
-                    <p>Modelos preditivos, NLP, visão computacional e agentes inteligentes que automatizam processos e
-                        geram insights a partir dos seus dados.</p>
-                    <ul class="service-tags">
-                        <li>Deep Learning</li>
-                        <li>NLP</li>
-                        <li>Computer Vision</li>
-                        <li>LLMs</li>
-                    </ul>
-                </div>
-                <div class="service-card glass-card" data-animate="fade-up" data-delay="200">
-                    <div class="service-icon-wrap">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
+                    <h3>Dados &amp; Analytics</h3>
+                    <p>Diagnóstico, análise exploratória, modelagem estatística e dashboards que viram base para decisão — não apenas para reunião. Da pergunta de negócio até o número confiável, com rastro reprodutível.</p>
+                    <div class="service-foot">
+                        <span class="service-foot-label">Stack frequente</span>
+                        <ul class="service-tags">
+                            <li>Python</li><li>R</li><li>Power BI</li><li>Econometria</li><li>Forecasting</li>
+                        </ul>
                     </div>
-                    <h3>Data Science & Analytics</h3>
-                    <p>Análise exploratória, modelagem estatística, dashboards e ciência de dados aplicada para decisões
-                        baseadas em evidências.</p>
-                    <ul class="service-tags">
-                        <li>Python</li>
-                        <li>R</li>
-                        <li>Power BI</li>
-                        <li>Econometria</li>
-                    </ul>
                 </div>
-                <div class="service-card glass-card" data-animate="fade-up" data-delay="300">
-                    <div class="service-icon-wrap">
-                        <div class="service-icon">
-                            <i class="fas fa-database"></i>
+
+                <div class="service-card" data-animate data-delay="80">
+                    <div class="service-head">
+                        <div class="service-icon"><i class="fas fa-database"></i></div>
+                        <div class="service-meta">
+                            <span class="service-num">02 / 04</span>
+                            <span class="service-arrow"><i class="fas fa-arrow-up"></i></span>
                         </div>
                     </div>
                     <h3>Engenharia de Dados</h3>
-                    <p>Pipelines de dados, data lakes, ETL/ELT, infraestrutura de dados escalável na nuvem para
-                        alimentar seus projetos de IA.</p>
-                    <ul class="service-tags">
-                        <li>GCP</li>
-                        <li>AWS</li>
-                        <li>SQL</li>
-                        <li>Spark</li>
-                    </ul>
+                    <p>Pipelines confiáveis, data lakes, ETL/ELT e infra de dados na nuvem — a fundação que sustenta tudo o que vem depois.</p>
+                    <div class="service-foot">
+                        <span class="service-foot-label">Stack frequente</span>
+                        <ul class="service-tags">
+                            <li>GCP</li><li>AWS</li><li>SQL</li><li>Spark</li><li>Airflow</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-card glass-card" data-animate="fade-up" data-delay="400">
-                    <div class="service-icon-wrap">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
+
+                <div class="service-card" data-animate data-delay="160">
+                    <div class="service-head">
+                        <div class="service-icon"><i class="fas fa-code"></i></div>
+                        <div class="service-meta">
+                            <span class="service-num">03 / 04</span>
+                            <span class="service-arrow"><i class="fas fa-arrow-up"></i></span>
                         </div>
                     </div>
-                    <h3>Desenvolvimento de Software</h3>
-                    <p>Aplicações web e mobile, APIs robustas, sistemas integrados e soluções sob medida que escalam
-                        junto com o seu negócio.</p>
-                    <ul class="service-tags">
-                        <li>Web Apps</li>
-                        <li>APIs</li>
-                        <li>Cloud</li>
-                        <li>DevOps</li>
-                    </ul>
+                    <h3>Software sob medida</h3>
+                    <p>Aplicações web, APIs, integrações e sistemas internos que resolvem problemas reais e crescem com o negócio.</p>
+                    <div class="service-foot">
+                        <span class="service-foot-label">Stack frequente</span>
+                        <ul class="service-tags">
+                            <li>React</li><li>Next.js</li><li>Node</li><li>APIs</li><li>Cloud</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate data-delay="240">
+                    <div class="service-head">
+                        <div class="service-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <div class="service-meta">
+                            <span class="service-num">04 / 04</span>
+                            <span class="service-arrow"><i class="fas fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+                    <h3>Modelagem &amp; Automação</h3>
+                    <p>Modelos preditivos, classificação, NLP e automações — usados quando fazem sentido para o problema, com critério, mensuração e camada de monitoramento em produção.</p>
+                    <div class="service-foot">
+                        <span class="service-foot-label">Stack frequente</span>
+                        <ul class="service-tags">
+                            <li>Machine Learning</li><li>NLP</li><li>LLMs</li><li>Forecasting</li><li>MLOps</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projetos Section -->
-    <section id="projetos" class="section section-alt">
+    <!-- Projetos — Magazine list -->
+    <section id="projetos" class="section">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Portfólio</span>
-                <h2>Nossos <span class="gradient-text">Projetos</span></h2>
-                <p class="section-desc">Cases reais de como dados transformam negócios.</p>
+            <div class="section-header" data-animate>
+                <span class="section-tag">Trabalho selecionado</span>
+                <h2>Onde dados<br>viraram <em>resultado.</em></h2>
+                <p class="section-desc">Uma amostra de projetos. Passe o mouse sobre cada linha para ver um vislumbre.</p>
             </div>
-            <div class="projects-grid">
-                <article class="project-card glass-card" data-animate="fade-up" data-delay="100">
-                    <div class="project-image">
-                        <img src="images/fidelidade_dark.png" alt="Programa de Fidelidade" loading="lazy">
-                        <div class="project-overlay">
-                            <span class="project-category">Machine Learning</span>
+
+            <div class="projects-list-wrap" id="projectsWrap">
+                <ul class="projects-list" id="projectsList">
+                    <li class="project-row" data-image="images/fidelidade_dark.png" data-animate>
+                        <span class="project-num">01</span>
+                        <div class="project-row-content">
+                            <h3>Programa de fidelidade com clusterização</h3>
+                            <p>Segmentação não-supervisionada de clientes para um programa de fidelidade, com potencial estimado de <strong>$15M</strong> em receita anual incremental.</p>
+                            <div class="project-meta-inline">
+                                <span class="meta-category">Machine Learning</span>
+                                <span class="sep">·</span>
+                                <span>2024</span>
+                            </div>
+                            <div class="project-tech-inline">
+                                <span>Python</span><span>Sklearn</span><span>Pandas</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Programa de Fidelidade com Clusterização de Clientes</h3>
-                        <p>Segmentação de clientes usando técnicas não-supervisionadas para criar um programa de
-                            fidelidade, gerando potencial de <strong>$15M</strong> em receita anual incremental.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Sklearn</span>
-                            <span>Pandas</span>
-                            <span>Clustering</span>
+                    </li>
+
+                    <li class="project-row" data-image="images/sale_dark.png" data-animate data-delay="60">
+                        <span class="project-num">02</span>
+                        <div class="project-row-content">
+                            <h3>Análise imobiliária para compra e revenda</h3>
+                            <p>Identificação de imóveis abaixo do preço de mercado e definição do preço ideal de revenda via análise exploratória avançada.</p>
+                            <div class="project-meta-inline">
+                                <span class="meta-category">Data Science</span>
+                                <span class="sep">·</span>
+                                <span>2024</span>
+                            </div>
+                            <div class="project-tech-inline">
+                                <span>Python</span><span>Seaborn</span><span>EDA</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="project-card glass-card" data-animate="fade-up" data-delay="200">
-                    <div class="project-image">
-                        <img src="images/sale_dark.png" alt="Análise Imobiliária" loading="lazy">
-                        <div class="project-overlay">
-                            <span class="project-category">Data Science</span>
+                    </li>
+
+                    <li class="project-row" data-image="images/bank_dark.png" data-animate data-delay="120">
+                        <span class="project-num">03</span>
+                        <div class="project-row-content">
+                            <h3>Banco de dados para marketing bancário</h3>
+                            <p>Arquitetura de banco de dados com pipelines de importação, limpeza e tratamento — alimentando campanhas de marketing em escala.</p>
+                            <div class="project-meta-inline">
+                                <span class="meta-category">Engenharia de Dados</span>
+                                <span class="sep">·</span>
+                                <span>2023</span>
+                            </div>
+                            <div class="project-tech-inline">
+                                <span>Python</span><span>GCP</span><span>SQL</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Análise Imobiliária para Compra e Revenda</h3>
-                        <p>Identificação de imóveis abaixo do preço de mercado e definição do preço ideal de revenda
-                            através de análise exploratória avançada de dados.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Seaborn</span>
-                            <span>Scikit-Learn</span>
-                            <span>EDA</span>
+                    </li>
+
+                    <li class="project-row" data-image="images/agenda_bcmed.png" data-animate data-delay="180">
+                        <span class="project-num">04</span>
+                        <div class="project-row-content">
+                            <h3>Plataforma de agendamentos</h3>
+                            <p>Sistema automatizado para organização de treinamentos técnicos, com integração completa ao <strong>Google Calendar</strong>.</p>
+                            <div class="project-meta-inline">
+                                <span class="meta-category">Web App</span>
+                                <span class="sep">·</span>
+                                <span>2025</span>
+                            </div>
+                            <div class="project-tech-inline">
+                                <span>React</span><span>Node.js</span><span>Calendar API</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="project-card glass-card" data-animate="fade-up" data-delay="300">
-                    <div class="project-image">
-                        <img src="images/bank_dark.png" alt="Marketing Bancário" loading="lazy">
-                        <div class="project-overlay">
-                            <span class="project-category">Engenharia de Dados</span>
+                    </li>
+
+                    <li class="project-row" data-image="images/bi_bcmed.png" data-animate data-delay="240">
+                        <span class="project-num">05</span>
+                        <div class="project-row-content">
+                            <h3>Dashboard de BI conversacional</h3>
+                            <p>Plataforma de Business Intelligence com camada conversacional para consultar dados em linguagem natural — KPIs, métricas e análise avançada num só lugar.</p>
+                            <div class="project-meta-inline">
+                                <span class="meta-category">Data Analytics</span>
+                                <span class="sep">·</span>
+                                <span>2025</span>
+                            </div>
+                            <div class="project-tech-inline">
+                                <span>Next.js</span><span>React</span><span>Tailwind</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Banco de Dados para Marketing Bancário</h3>
-                        <p>Arquitetura de banco de dados para campanhas de marketing bancário, com pipelines de
-                            importação, limpeza e tratamento de dados usando Python e GCP.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>GCP</span>
-                            <span>SQL</span>
+                    </li>
+
+                    <li class="project-row" data-image="images/rh_bcmed.png" data-animate data-delay="300">
+                        <span class="project-num">06</span>
+                        <div class="project-row-content">
+                            <h3>Sistema de gestão RH</h3>
+                            <p>Aplicação dedicada à gestão de Recursos Humanos — acompanhamento de perfis de colaboradores e organização de equipes.</p>
+                            <div class="project-meta-inline">
+                                <span class="meta-category">Web App</span>
+                                <span class="sep">·</span>
+                                <span>2025</span>
+                            </div>
+                            <div class="project-tech-inline">
+                                <span>React</span><span>Tailwind</span><span>Frontend</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="project-card glass-card" data-animate="fade-up" data-delay="400">
-                    <div class="project-image">
-                        <img src="images/agenda_bcmed.png" alt="Agendamentos" loading="lazy">
-                        <div class="project-overlay">
-                            <span class="project-category">Web App</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Plataforma de Agendamentos</h3>
-                        <p>Sistema automatizado para organização de treinamentos técnicos de equipamentos de estética, com integração completa ao <strong>Google Calendar</strong>.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>Calendar API</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card glass-card" data-animate="fade-up" data-delay="500">
-                    <div class="project-image">
-                        <img src="images/bi_bcmed.png" alt="Dashboard BI" loading="lazy">
-                        <div class="project-overlay">
-                            <span class="project-category">Data Analytics</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Dashboard de BI</h3>
-                        <p>Plataforma de Business Intelligence para acompanhamento de KPIs, análise avançada de dados e métricas de desempenho, com IA integrada para responder perguntas sobre os dados.</p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>React</span>
-                            <span>Tailwind CSS</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card glass-card" data-animate="fade-up" data-delay="600">
-                    <div class="project-image">
-                        <img src="images/rh_bcmed.png" alt="Sistema RH" loading="lazy">
-                        <div class="project-overlay">
-                            <span class="project-category">Web App</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Sistema de Gestão RH</h3>
-                        <p>Aplicação dedicada à gestão de Recursos Humanos, facilitando o acompanhamento de perfis de colaboradores e organização de equipes.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Tailwind CSS</span>
-                            <span>Frontend</span>
-                        </div>
-                    </div>
-                </article>
+                    </li>
+                </ul>
+
+                <div class="project-preview" id="projectPreview">
+                    <img src="" alt="" id="projectPreviewImg">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Equipe Section -->
+    <!-- Equipe -->
     <section id="equipe" class="section">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Nosso Time</span>
-                <h2>Quem está <span class="gradient-text">por trás</span></h2>
-                <p class="section-desc">Pessoas apaixonadas por dados e tecnologia.</p>
+            <div class="section-header" data-animate>
+                <span class="section-tag">Quem está por trás</span>
+                <h2>O time é <em>enxuto,</em><br>o foco é no problema.</h2>
             </div>
+
             <div class="team-section">
-                <div class="team-card glass-card" data-animate="fade-up" data-delay="100">
-                    <div class="team-info">
-                        <h3>Matheus M. Mendez</h3>
-                        <span class="team-role">Fundador & Lead Data Scientist</span>
-                        <p>Economista pela UNILA, MBA em Data Science & Analytics pela USP. Experiência em Business
-                            Intelligence, Engenharia de Dados, modelagem estatística e desenvolvimento de soluções de IA
-                            em produção.</p>
-                        <div class="team-skills">
-                            <span>Python</span>
-                            <span>R</span>
-                            <span>SQL</span>
-                            <span>Machine Learning</span>
-                            <span>Power BI</span>
-                            <span>GCP</span>
-                            <span>Docker</span>
-                            <span>Econometria</span>
-                        </div>
-                        <div class="team-social">
-                            <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener"
-                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener"
-                                aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://medium.com/@matheusmendez19" target="_blank" rel="noopener"
-                                aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-                            <a href="https://www.instagram.com/deepblue.ia/" target="_blank" rel="noopener"
-                                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        </div>
+                <div class="team-monogram" data-animate>
+                    <span class="mm">MM</span>
+                    <div class="mm-stamp">
+                        <span>Fundador</span>
+                        <span class="cyan">BR · 2026</span>
+                    </div>
+                </div>
+
+                <div class="team-info" data-animate data-delay="120">
+                    <h3>Matheus M. Mendez</h3>
+                    <span class="team-role">Fundador · Dados &amp; Software</span>
+                    <p>
+                        Economista pela UNILA, MBA em Data Science &amp; Analytics pela USP. Mais de cinco anos atuando com Business Intelligence, engenharia de dados, modelagem estatística e desenvolvimento de software em produção. Trabalho com empresas que querem dados como vantagem real — não como decoração de relatório.
+                    </p>
+                    <div class="team-skills">
+                        <span>Python</span><span>R</span><span>SQL</span><span>Machine Learning</span>
+                        <span>Power BI</span><span>GCP</span><span>Docker</span><span>Econometria</span>
+                        <span>React</span><span>Next.js</span>
+                    </div>
+                    <div class="team-social">
+                        <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@matheusmendez19" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                        <a href="https://www.instagram.com/deepblue.ia/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="section cta-section">
         <div class="container">
-            <div class="cta-content glass-card" data-animate="fade-up">
-                <div class="cta-bg-orb"></div>
-                <h2>Pronto para transformar seus dados em <span class="gradient-text">resultados</span>?</h2>
-                <p>Vamos conversar sobre como a deepblue.ia pode acelerar a transformação digital do seu negócio.</p>
+            <div class="cta-content" data-animate>
+                <h2>Tem um projeto<br>em mente? <span class="gradient-text">Vamos conversar.</span></h2>
+                <p>Da primeira mensagem à entrega final, com método claro e poucos slides — só o necessário para o seu time decidir.</p>
                 <a href="#contato" class="btn btn-primary btn-lg">
-                    <span>Iniciar Conversa</span>
-                    <i class="fas fa-arrow-right"></i>
+                    Iniciar conversa <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contato Section -->
-    <section id="contato" class="section section-alt">
+    <!-- Contato -->
+    <section id="contato" class="section">
         <div class="container">
-            <div class="section-header" data-animate="fade-up">
-                <span class="section-tag">Fale Conosco</span>
-                <h2>Entre em <span class="gradient-text">Contato</span></h2>
-                <p class="section-desc">Estamos prontos para ajudar no seu próximo projeto.</p>
+            <div class="section-header" data-animate>
+                <span class="section-tag">Fale com a gente</span>
+                <h2>Entre em <em>contato.</em></h2>
+                <p class="section-desc">Conte sobre o problema — em até dois dias úteis volto com uma primeira leitura.</p>
             </div>
+
             <div class="contact-wrapper">
-                <!-- Contact Form -->
-                <div class="contact-form-container glass-card" data-animate="fade-up" data-delay="100">
-                    <form action="https://formsubmit.co/matheusmendez19@gmail.com" method="POST" class="contact-form">
-                        <!-- FormSubmit Config -->
-                        <input type="hidden" name="_subject" value="Novo Contato via Site - deepblue.ia!">
+                <div class="contact-form-container" id="contactFormContainer" data-animate>
+                    <div class="contact-form-head">
+                        <h3 class="contact-form-title">Comece uma <em>conversa.</em></h3>
+                        <span class="contact-form-info"><span class="form-info-dot"></span>Formulário · 01</span>
+                    </div>
+
+                    <div class="form-error" id="formError" hidden role="alert">
+                        <i class="fas fa-circle-exclamation"></i>
+                        <span>Não consegui enviar. Tenta novamente ou me chama direto no <a href="https://wa.me/5545998010609?text=Oi%2C%20vim%20pelo%20site" target="_blank" rel="noopener">WhatsApp →</a></span>
+                    </div>
+
+                    <form action="https://formsubmit.co/matheusmendez19@gmail.com" method="POST" class="contact-form" id="contactForm">
+                        <input type="hidden" name="_subject" value="Novo contato pelo site — deepblue">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
-                        
+                        <input type="hidden" name="_next" value="/?sent=1">
+
                         <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                            <label for="name" data-num="01">Nome</label>
+                            <input type="text" id="name" name="name" required placeholder="Como você se chama?">
                         </div>
                         <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                            <label for="email" data-num="02">E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="seu.email@empresa.com">
                         </div>
                         <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Como podemos ajudar o seu negócio?"></textarea>
+                            <label for="message" data-num="03">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Conte um pouco sobre o projeto ou problema."></textarea>
                         </div>
-                        <button type="submit" class="btn-pill-white w-100">
-                            <span class="btn-pill-inner">Enviar Mensagem <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></span>
-                        </button>
+                        <div class="form-foot-row">
+                            <p class="form-foot">
+                                <em>P.S.</em> prefiro problemas concretos a briefings vagos — quanto mais específico, melhor.
+                            </p>
+                            <button type="submit" class="form-submit" id="formSubmitBtn">
+                                <span class="submit-state submit-state--default">
+                                    <span>Enviar mensagem</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                                <span class="submit-state submit-state--loading">
+                                    <span>Enviando</span>
+                                    <i class="fas fa-circle-notch"></i>
+                                </span>
+                            </button>
+                        </div>
                     </form>
+
+                    <div class="form-success" id="formSuccess" hidden>
+                        <div class="success-icon"><i class="fas fa-check"></i></div>
+                        <h3 class="success-title">Mensagem <em>recebida.</em></h3>
+                        <p class="success-text">
+                            Volto em até <strong>48h úteis</strong> — fica de olho na caixa de entrada (e no spam, só por garantia).
+                        </p>
+                        <button type="button" class="success-reset" id="formResetBtn">
+                            <i class="fas fa-arrow-rotate-left"></i>
+                            <span>Enviar outra mensagem</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Info Cards -->
-                <div class="contact-grid-side">
-                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="200">
-                        <div class="contact-icon">
-                            <a href="mailto:matheusmendez19@gmail.com" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                        <h4>E-mail</h4>
-                        <a href="mailto:matheusmendez19@gmail.com">matheusmendez19@gmail.com</a>
+                <aside class="contact-aside" data-animate data-delay="120">
+                    <div class="aside-eyebrow">
+                        <span class="aside-dot"></span>
+                        <span>Atendendo · Q3 2026 · resposta em até 48h úteis</span>
                     </div>
-                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="300">
-                        <div class="contact-icon">
-                            <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
+
+                    <a href="https://wa.me/5545998010609?text=Oi%2C%20vim%20pelo%20site" target="_blank" rel="noopener" class="contact-featured">
+                        <div class="featured-glow"></div>
+                        <div class="featured-head">
+                            <span class="featured-eyebrow">Linha direta</span>
+                            <span class="featured-icon"><i class="fab fa-whatsapp"></i></span>
                         </div>
-                        <h4>LinkedIn</h4>
-                        <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank"
-                            rel="noopener">matheus-mendez</a>
-                    </div>
-                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="400">
-                        <div class="contact-icon">
-                            <a href="https://wa.me/5545998010609?text=Oi%2C%20vim%20pelo%20site" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
+                        <h3>Falar agora <em>no WhatsApp.</em></h3>
+                        <div class="featured-foot">
+                            <span class="featured-value">(45) 99801-0609</span>
+                            <span class="featured-arrow"><i class="fas fa-arrow-up"></i></span>
                         </div>
-                        <h4>WhatsApp</h4>
-                        <a href="https://wa.me/5545998010609?text=Oi%2C%20vim%20pelo%20site" target="_blank" rel="noopener">(45) 99801-0609</a>
-                    </div>
-                    <div class="contact-card glass-card" data-animate="fade-up" data-delay="500">
-                        <div class="contact-icon">
-                            <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none;">
-                                <i class="fab fa-github"></i>
+                    </a>
+
+                    <ul class="contact-methods">
+                        <li>
+                            <a href="mailto:matheusmendez19@gmail.com">
+                                <i class="cm-ico fas fa-envelope"></i>
+                                <span class="cm-label">E-mail</span>
+                                <span class="cm-value">matheusmendez19@gmail.com</span>
+                                <i class="cm-arrow fas fa-arrow-right"></i>
                             </a>
-                        </div>
-                        <h4>GitHub</h4>
-                        <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener">matheusmendez-ask</a>
-                    </div>
-                </div>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener">
+                                <i class="cm-ico fab fa-linkedin-in"></i>
+                                <span class="cm-label">LinkedIn</span>
+                                <span class="cm-value">matheus-mendez</span>
+                                <i class="cm-arrow fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener">
+                                <i class="cm-ico fab fa-github"></i>
+                                <span class="cm-label">GitHub</span>
+                                <span class="cm-value">matheusmendez-ask</span>
+                                <i class="cm-arrow fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </aside>
             </div>
         </div>
     </section>
@@ -483,10 +626,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/deepblue_logo.jpeg" alt="deepblue.ia" class="footer-logo">
-                    <span class="footer-logo-text">deep<span class="accent">blue</span><span
-                            class="suffix">.ia</span></span>
-                    <p>Inteligência Artificial que transforma dados em resultados.</p>
+                    <img src="images/deepblue_logo.jpeg" alt="deepblue" class="footer-logo">
+                    <span class="footer-logo-text">deep<span class="accent">blue</span><span class="suffix"> · consultoria</span></span>
+                    <p>Dados, software e estratégia para empresas que querem decisões melhores — e que se sustentem no dia seguinte.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Navegação</h4>
@@ -494,103 +636,173 @@
                         <li><a href="#sobre">Sobre</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#manifesto">Manifesto</a></li>
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
-                    <h4>Redes Sociais</h4>
+                    <h4>Encontre-nos</h4>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener"
-                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener"
-                            aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://medium.com/@matheusmendez19" target="_blank" rel="noopener"
-                            aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-                        <a href="https://www.instagram.com/deepblue.ia/" target="_blank" rel="noopener"
-                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/matheus-mendez" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/matheusmendez-ask" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@matheusmendez19" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                        <a href="https://www.instagram.com/deepblue.ia/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
+
+            <div class="footer-signature">deepblue<span class="dot">.</span></div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 deepblue.ia — Todos os direitos reservados.</p>
+                <span>&copy; 2026 deepblue · consultoria</span>
+                <span>Construído com cuidado em Foz do Iguaçu</span>
             </div>
         </div>
     </footer>
 
+    <!-- Theme toggle (light mode easter egg) -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <span class="theme-toggle-icon">
+            <i class="fas fa-sun light-icon"></i>
+            <i class="fas fa-moon dark-icon"></i>
+        </span>
+        <span class="theme-toggle-label">Tema</span>
+    </button>
+
     <script>
-        // Navbar scroll effect
+        /* -------- Navbar scroll -------- */
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
         });
 
-        // Mobile Nav Logic
+        /* -------- Mobile nav -------- */
         const navToggle = document.getElementById('navToggle');
         const mobileNavOverlay = document.getElementById('mobileNav');
         const mobileNavClose = document.getElementById('mobileNavClose');
         const mobileNavLinks = mobileNavOverlay.querySelectorAll('a');
 
-        function openMobileNav() {
-            mobileNavOverlay.classList.add('active');
-        }
+        function openMobileNav() { mobileNavOverlay.classList.add('active'); }
+        function closeMobileNav() { mobileNavOverlay.classList.remove('active'); }
 
-        function closeMobileNav() {
-            mobileNavOverlay.classList.remove('active');
-        }
+        navToggle?.addEventListener('click', (e) => { e.stopPropagation(); openMobileNav(); });
+        mobileNavClose?.addEventListener('click', closeMobileNav);
+        mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileNav));
 
-        if (navToggle) {
-            navToggle.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent immediate close if bubbling
-                openMobileNav();
+        /* -------- Hero spotlight (mouse-following cyan glow) -------- */
+        const heroOverlay = document.getElementById('heroOverlay');
+        const hero = document.getElementById('hero');
+
+        if (hero && heroOverlay) {
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                heroOverlay.style.setProperty('--mx', `${x}%`);
+                heroOverlay.style.setProperty('--my', `${y}%`);
             });
         }
 
-        if (mobileNavClose) {
-            mobileNavClose.addEventListener('click', closeMobileNav);
-        }
+        /* -------- Hero canvas — particle wave with binary digits -------- */
+        (function initHeroCanvas() {
+            const canvas = document.getElementById('heroCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            let w = 0, h = 0;
+            let particles = [];
+            let mouseX = -9999, mouseY = -9999;
 
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeMobileNav);
-        });
-
-        // Force Video Autoplay Logic (Aggressive)
-        const heroVideo = document.getElementById('heroVideo');
-
-        const attemptPlay = () => {
-            if (heroVideo && heroVideo.paused) {
-                heroVideo.muted = true;
-                heroVideo.play().then(() => {
-                    // Success! Remove listeners
-                    removeInteractionListeners();
-                }).catch(err => {
-                    console.log("Autoplay paused, waiting for interaction");
-                });
+            function resize() {
+                const rect = canvas.getBoundingClientRect();
+                w = rect.width;
+                h = rect.height;
+                canvas.width = w * dpr;
+                canvas.height = h * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                seed();
             }
-        };
 
-        const interactionEvents = ['click', 'touchstart', 'scroll', 'keydown'];
+            function rand(min, max) { return min + Math.random() * (max - min); }
 
-        function removeInteractionListeners() {
-            interactionEvents.forEach(event => {
-                document.removeEventListener(event, attemptPlay);
+            class Particle {
+                constructor() { this.reset(true); }
+                reset(initial) {
+                    this.x = initial ? rand(0, w) : w + rand(0, 200);
+                    this.baseY = rand(h * 0.15, h * 0.85);
+                    this.speed = rand(0.18, 0.55);
+                    this.amplitude = rand(18, 70);
+                    this.frequency = rand(0.004, 0.011);
+                    this.phase = rand(0, Math.PI * 2);
+                    this.size = rand(0.8, 2.2);
+                    this.alpha = rand(0.18, 0.7);
+                    this.kind = Math.random() < 0.14 ? 'digit' : 'dot';
+                    this.digit = Math.random() < 0.5 ? '0' : '1';
+                }
+                update(t) {
+                    this.x -= this.speed;
+                    this.y = this.baseY + Math.sin(this.x * this.frequency + this.phase + t * 0.0006) * this.amplitude;
+
+                    /* mouse repulsion */
+                    const dx = this.x - mouseX;
+                    const dy = this.y - mouseY;
+                    const d2 = dx * dx + dy * dy;
+                    if (d2 < 18000) {
+                        const f = (18000 - d2) / 18000;
+                        const d = Math.sqrt(d2) || 1;
+                        this.x += (dx / d) * f * 6;
+                        this.y += (dy / d) * f * 6;
+                    }
+
+                    if (this.x < -40) this.reset(false);
+                }
+                draw() {
+                    if (this.kind === 'digit') {
+                        ctx.font = '11px "Geist Mono", "JetBrains Mono", monospace';
+                        ctx.fillStyle = `rgba(78, 215, 224, ${this.alpha})`;
+                        ctx.fillText(this.digit, this.x, this.y);
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(154, 229, 235, ${this.alpha})`;
+                        ctx.shadowColor = 'rgba(78, 215, 224, 0.6)';
+                        ctx.shadowBlur = 6;
+                        ctx.fill();
+                        ctx.shadowBlur = 0;
+                    }
+                }
+            }
+
+            function seed() {
+                const target = Math.floor((w * h) / 7000);
+                particles = Array.from({ length: target }, () => new Particle());
+            }
+
+            function frame(t) {
+                ctx.clearRect(0, 0, w, h);
+                for (const p of particles) { p.update(t); p.draw(); }
+                requestAnimationFrame(frame);
+            }
+
+            resize();
+            window.addEventListener('resize', () => requestAnimationFrame(resize));
+            hero?.addEventListener('mousemove', (e) => {
+                const r = hero.getBoundingClientRect();
+                mouseX = e.clientX - r.left;
+                mouseY = e.clientY - r.top;
             });
-        }
+            hero?.addEventListener('mouseleave', () => { mouseX = mouseY = -9999; });
+            requestAnimationFrame(frame);
+        })();
 
-        // Try immediately
-        window.addEventListener('load', attemptPlay);
-        document.addEventListener('DOMContentLoaded', attemptPlay);
-
-        // Try on any user interaction (Fallback)
-        interactionEvents.forEach(event => {
-            document.addEventListener(event, attemptPlay, { passive: true });
-        });
-
-        // Smooth scroll
+        /* -------- Smooth scroll -------- */
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+                const target = document.querySelector(targetId);
                 if (target) {
+                    e.preventDefault();
                     const offset = navbar.offsetHeight + 20;
                     const position = target.getBoundingClientRect().top + window.scrollY - offset;
                     window.scrollTo({ top: position, behavior: 'smooth' });
@@ -598,21 +810,186 @@
             });
         });
 
-        // Scroll animations with Intersection Observer
+        /* -------- Scroll reveal -------- */
         const animateElements = document.querySelectorAll('[data-animate]');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const delay = entry.target.getAttribute('data-delay') || 0;
-                    setTimeout(() => {
-                        entry.target.classList.add('animated');
-                    }, parseInt(delay));
+                    setTimeout(() => entry.target.classList.add('animated'), parseInt(delay));
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
         animateElements.forEach(el => observer.observe(el));
+
+        /* -------- Stats counter -------- */
+        const countEls = document.querySelectorAll('[data-count]');
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-count'), 10);
+                const numSpan = el.querySelector('.num') || el;
+                const duration = 1400;
+                const start = performance.now();
+                function tick(now) {
+                    const t = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - t, 3);
+                    const value = Math.round(eased * target);
+                    numSpan.textContent = value;
+                    if (t < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+                countObserver.unobserve(el);
+            });
+        }, { threshold: 0.4 });
+        countEls.forEach(el => countObserver.observe(el));
+
+        /* -------- Project preview — anchored to row vertical center -------- */
+        const projectRows = document.querySelectorAll('.project-row');
+        const projectsWrap = document.getElementById('projectsWrap');
+        const preview = document.getElementById('projectPreview');
+        const previewImg = document.getElementById('projectPreviewImg');
+
+        if (preview && previewImg && projectsWrap) {
+            projectRows.forEach(row => {
+                row.addEventListener('mouseenter', () => {
+                    const src = row.getAttribute('data-image');
+                    if (!src) return;
+                    previewImg.src = src;
+                    const rowRect  = row.getBoundingClientRect();
+                    const wrapRect = projectsWrap.getBoundingClientRect();
+                    const topInWrap = rowRect.top - wrapRect.top + rowRect.height / 2;
+                    preview.style.top = `${topInWrap}px`;
+                    preview.classList.add('active');
+                });
+                row.addEventListener('mouseleave', () => {
+                    preview.classList.remove('active');
+                });
+            });
+        }
+
+        /* -------- Nav: "currently viewing" active state -------- */
+        const sectionsForNav = [
+            { id: 'sobre',     hrefs: ['#sobre'] },
+            { id: 'servicos',  hrefs: ['#servicos'] },
+            { id: 'projetos',  hrefs: ['#projetos'] },
+            { id: 'manifesto', hrefs: ['#manifesto'] },
+            { id: 'equipe',    hrefs: ['#equipe'] },
+            { id: 'contato',   hrefs: ['#contato'] },
+        ];
+        const navAnchors = document.querySelectorAll('.nav-links li a, .mobile-nav-list a');
+
+        function setActiveNav(id) {
+            navAnchors.forEach(a => {
+                const href = a.getAttribute('href');
+                const match = sectionsForNav.find(s => s.id === id);
+                a.classList.toggle('active', !!(match && match.hrefs.includes(href)));
+            });
+        }
+
+        const navObserver = new IntersectionObserver((entries) => {
+            /* pick the most visible intersecting section */
+            const visible = entries
+                .filter(e => e.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) setActiveNav(visible.target.id);
+        }, {
+            rootMargin: '-30% 0px -55% 0px',
+            threshold: [0, 0.25, 0.5, 0.75, 1]
+        });
+
+        sectionsForNav.forEach(s => {
+            const el = document.getElementById(s.id);
+            if (el) navObserver.observe(el);
+        });
+
+        /* -------- Theme toggle (light mode easter egg) -------- */
+        const themeToggle = document.getElementById('themeToggle');
+        const THEME_KEY = 'deepblue-theme';
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        if (savedTheme === 'light') document.body.classList.add('light');
+
+        themeToggle?.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            const isLight = document.body.classList.contains('light');
+            localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark');
+        });
+
+        /* -------- Contact form: AJAX submit + success/error states -------- */
+        (function initContactForm() {
+            const form          = document.getElementById('contactForm');
+            const formContainer = document.getElementById('contactFormContainer');
+            const submitBtn     = document.getElementById('formSubmitBtn');
+            const errorPanel    = document.getElementById('formError');
+            const successPanel  = document.getElementById('formSuccess');
+            const resetBtn      = document.getElementById('formResetBtn');
+            if (!form || !formContainer || !submitBtn || !errorPanel || !successPanel) return;
+
+            const FORM_ENDPOINT = 'https://formsubmit.co/ajax/matheusmendez19@gmail.com';
+
+            function showError() {
+                errorPanel.hidden = false;
+                /* re-trigger animation if already shown */
+                errorPanel.style.animation = 'none';
+                requestAnimationFrame(() => { errorPanel.style.animation = ''; });
+            }
+
+            function hideError() { errorPanel.hidden = true; }
+
+            function showSuccess() {
+                successPanel.hidden = false;
+                formContainer.classList.add('sent');
+                /* gentle scroll into view so the user sees the confirmation */
+                const navOffset = document.getElementById('navbar')?.offsetHeight || 80;
+                const top = formContainer.getBoundingClientRect().top + window.scrollY - navOffset - 24;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+
+            function resetToForm() {
+                formContainer.classList.remove('sent');
+                successPanel.hidden = true;
+                form.reset();
+                hideError();
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                hideError();
+                submitBtn.classList.add('loading');
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(FORM_ENDPOINT, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    let data = {};
+                    try { data = await response.json(); } catch (_) { /* ignore parse errors */ }
+                    const ok = response.ok && (data.success === 'true' || data.success === true);
+                    if (ok) {
+                        showSuccess();
+                    } else {
+                        showError();
+                    }
+                } catch (err) {
+                    showError();
+                } finally {
+                    submitBtn.classList.remove('loading');
+                }
+            });
+
+            resetBtn?.addEventListener('click', resetToForm);
+
+            /* Graceful fallback: if non-JS submit succeeded and FormSubmit redirected
+               back with ?sent=1, show the success state on load. */
+            if (window.location.search.includes('sent=1')) {
+                showSuccess();
+                history.replaceState({}, '', window.location.pathname);
+            }
+        })();
     </script>
 </body>
 
