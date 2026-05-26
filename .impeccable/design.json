@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "title": "Design System: deepblue",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Abyss",
+        "canonical": "oklch(13% 0.04 260)",
+        "tonalRamp": [
+          "#03050E",
+          "#06091A",
+          "#0B132B",
+          "#0F1A3A",
+          "#16224A",
+          "#22305E",
+          "#3B4A7A",
+          "#7886A8"
+        ]
+      },
+      "bg-elev": {
+        "role": "neutral",
+        "displayName": "Surface Elevated",
+        "canonical": "oklch(18% 0.045 260)",
+        "tonalRamp": [
+          "#06091A",
+          "#0B132B",
+          "#0F1A3A",
+          "#16224A",
+          "#22305E",
+          "#3B4A7A",
+          "#5B6B91",
+          "#7886A8"
+        ]
+      },
+      "bg-card": {
+        "role": "neutral",
+        "displayName": "Surface Card",
+        "canonical": "oklch(21% 0.05 260)",
+        "tonalRamp": [
+          "#0B132B",
+          "#0F1A3A",
+          "#16224A",
+          "#22305E",
+          "#3B4A7A",
+          "#5B6B91",
+          "#7886A8",
+          "#C1CCE3"
+        ]
+      },
+      "bg-deeper": {
+        "role": "neutral",
+        "displayName": "Deepest Surface",
+        "canonical": "oklch(8% 0.03 260)",
+        "tonalRamp": [
+          "#03050E",
+          "#06091A",
+          "#0B132B",
+          "#0F1A3A",
+          "#16224A",
+          "#22305E",
+          "#3B4A7A",
+          "#7886A8"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(97% 0.015 250)",
+        "tonalRamp": [
+          "#4A5677",
+          "#7886A8",
+          "#9AA6C3",
+          "#C1CCE3",
+          "#D9E0F0",
+          "#E8EDF8",
+          "#F0F4FC",
+          "#F5F8FF"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "oklch(83% 0.025 250)",
+        "tonalRamp": [
+          "#4A5677",
+          "#7886A8",
+          "#9AA6C3",
+          "#C1CCE3",
+          "#D9E0F0",
+          "#E8EDF8",
+          "#F0F4FC",
+          "#F5F8FF"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "oklch(58% 0.03 250)",
+        "tonalRamp": [
+          "#4A5677",
+          "#5B6B91",
+          "#6B7A9D",
+          "#7886A8",
+          "#9AA6C3",
+          "#B0BAD2",
+          "#C1CCE3",
+          "#D9E0F0"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Ink Faint",
+        "canonical": "oklch(40% 0.03 250)",
+        "tonalRamp": [
+          "#2F3958",
+          "#3B4567",
+          "#4A5677",
+          "#5B6B91",
+          "#6B7A9D",
+          "#7886A8",
+          "#9AA6C3",
+          "#C1CCE3"
+        ]
+      },
+      "cyan": {
+        "role": "primary",
+        "displayName": "Deep-Sea Cyan",
+        "canonical": "oklch(78% 0.13 200)",
+        "tonalRamp": [
+          "#063A41",
+          "#085763",
+          "#0A7585",
+          "#0EA5C7",
+          "#22BFD0",
+          "#4ED7E0",
+          "#9AE5EB",
+          "#CEF1F4"
+        ]
+      },
+      "cyan-light": {
+        "role": "primary",
+        "displayName": "Cyan Light",
+        "canonical": "oklch(88% 0.07 200)",
+        "tonalRamp": [
+          "#0EA5C7",
+          "#22BFD0",
+          "#4ED7E0",
+          "#76E0E6",
+          "#9AE5EB",
+          "#B8EDF1",
+          "#CEF1F4",
+          "#E7F8FA"
+        ]
+      },
+      "cyan-deep": {
+        "role": "primary",
+        "displayName": "Cyan Deep",
+        "canonical": "oklch(60% 0.12 215)",
+        "tonalRamp": [
+          "#042F39",
+          "#06485A",
+          "#085F78",
+          "#0EA5C7",
+          "#22BFD0",
+          "#4ED7E0",
+          "#76E0E6",
+          "#9AE5EB"
+        ]
+      },
+      "royal": {
+        "role": "secondary",
+        "displayName": "Royal Blue",
+        "canonical": "oklch(60% 0.22 265)",
+        "tonalRamp": [
+          "#0A1F4B",
+          "#13327A",
+          "#1A45A5",
+          "#2C6FF0",
+          "#5589F4",
+          "#7DA4F7",
+          "#A5BEFA",
+          "#CDDAFC"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only — one per page. Geist 500, ~10vw, italic-emphasized via Instrument Serif inside." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2s, manifesto items, footer signature. Geist 500." },
+      "title": { "displayName": "Title", "purpose": "Card H3s, project rows, form heading. Geist 500." },
+      "italic": { "displayName": "Italic Voice", "purpose": "Emphasis only — Instrument Serif italic, used inside display/headline/title. Never as standalone body text." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs, ink-soft by default, max ~65ch line length." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, indices, dates, mono stamps. Always uppercase ≥0.16em letter-spacing." }
+    },
+    "shadows": [
+      { "name": "ambient-float", "value": "0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.16), 0 0 80px rgba(78, 215, 224, 0.10)", "purpose": "Project preview card — the only element that floats over content with this density." },
+      { "name": "lifted-toggle-rest", "value": "0 12px 28px rgba(0, 0, 0, 0.32)", "purpose": "Fixed-position theme toggle at rest." },
+      { "name": "lifted-toggle-hover", "value": "0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(78, 215, 224, 0.45)", "purpose": "Theme toggle on hover — adds cyan glow." },
+      { "name": "cyan-focus-glow", "value": "0 0 0 4px rgba(78, 215, 224, 0.14), 0 0 32px rgba(78, 215, 224, 0.18)", "purpose": "Focused input fields — soft cyan halo + outer glow." },
+      { "name": "cta-pressure-halo", "value": "0 0 0 6px rgba(78, 215, 224, 0.18), 0 0 40px rgba(78, 215, 224, 0.45)", "purpose": "Primary CTA on hover — pressurized cyan halo signaling weight." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.22, 0.61, 0.36, 1)", "purpose": "Default ease — used on all standard state transitions." },
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Slow expo-out — used on entrances, project preview slide-in, scroll-reveal." },
+      { "name": "duration-fast", "value": "0.4s", "purpose": "Default state transitions (hover, focus, color changes)." },
+      { "name": "duration-slow", "value": "0.7s", "purpose": "Hover blooms, scroll-reveal opacity/translate, large state changes." }
+    ],
+    "breakpoints": [
+      { "name": "lg", "value": "1100px" },
+      { "name": "sm", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The site's primary call to action. Cyan pill, inverted navy text, lift + halo on hover.",
+      "html": "<button class=\"ds-btn-primary\"><span>Iniciar conversa</span><svg viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 10px; background: #4ED7E0; color: #06091A; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: -0.005em; padding: 18px 32px; border: none; border-radius: 999px; cursor: pointer; transition: background 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1); box-shadow: 0 0 0 0 rgba(78, 215, 224, 0.45); } .ds-btn-primary:hover { background: #9AE5EB; transform: translateY(-2px); box-shadow: 0 0 0 6px rgba(78, 215, 224, 0.18), 0 10px 40px rgba(78, 215, 224, 0.45); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 4px rgba(78, 215, 224, 0.45); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary pill action — transparent with hairline border, fills with cyan haze on hover.",
+      "html": "<button class=\"ds-btn-ghost\">Ver portfólio</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #F5F8FF; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 500; font-size: 0.95rem; padding: 15px 26px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; cursor: pointer; transition: border-color 0.4s, color 0.4s, background 0.4s; } .ds-btn-ghost:hover { border-color: #4ED7E0; color: #9AE5EB; background: rgba(78, 215, 224, 0.10); } .ds-btn-ghost:focus-visible { outline: none; border-color: #4ED7E0; box-shadow: 0 0 0 4px rgba(78, 215, 224, 0.14); }"
+    },
+    {
+      "name": "Nav Pill (Inverted)",
+      "kind": "button",
+      "refersTo": "button-nav-pill",
+      "description": "Navbar CTA — ink-on-navy pill, shifts to cyan on hover.",
+      "html": "<a class=\"ds-nav-pill\"><span>Fale com a gente</span><svg viewBox=\"0 0 16 16\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a>",
+      "css": ".ds-nav-pill { display: inline-flex; align-items: center; gap: 8px; background: #F5F8FF; color: #06091A; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; font-size: 0.9rem; letter-spacing: -0.01em; padding: 11px 22px; border-radius: 999px; cursor: pointer; text-decoration: none; transition: background 0.4s, color 0.4s; } .ds-nav-pill:hover { background: #4ED7E0; color: #06091A; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Numbered form field with mono uppercase label and cyan focus halo. The label prefix (01., 02., ...) is italic Instrument Serif.",
+      "html": "<div class=\"ds-form-group\"><label class=\"ds-form-label\" for=\"ds-input-1\" data-num=\"01\">Nome</label><input class=\"ds-form-input\" id=\"ds-input-1\" type=\"text\" placeholder=\"Como você se chama?\"/></div>",
+      "css": ".ds-form-group { display: flex; flex-direction: column; gap: 12px; } .ds-form-label { font-family: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace; font-size: 0.7rem; font-weight: 500; color: #7886A8; letter-spacing: 0.22em; text-transform: uppercase; display: flex; align-items: baseline; gap: 14px; transition: color 0.4s; } .ds-form-label::before { content: attr(data-num); font-family: 'Instrument Serif', 'Iowan Old Style', Georgia, serif; font-style: italic; font-size: 1.1rem; color: #4ED7E0; letter-spacing: 0; text-transform: none; line-height: 1; transition: color 0.4s; } .ds-form-input { font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #06091A; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 18px 22px; color: #F5F8FF; font-size: 1rem; font-weight: 400; letter-spacing: -0.005em; transition: border-color 0.4s, background 0.4s, box-shadow 0.4s; width: 100%; box-sizing: border-box; } .ds-form-input::placeholder { color: #4A5677; } .ds-form-input:focus { outline: none; border-color: #4ED7E0; background: #03050E; box-shadow: 0 0 0 4px rgba(78, 215, 224, 0.14), 0 0 32px rgba(78, 215, 224, 0.18); } .ds-form-group:focus-within .ds-form-label, .ds-form-group:focus-within .ds-form-label::before { color: #9AE5EB; }"
+    },
+    {
+      "name": "Service Card (with cyan haze bloom)",
+      "kind": "card",
+      "refersTo": "card-default",
+      "description": "Major card — top cyan hairline on hover, offscreen radial cyan-haze bloom emerges on hover. Lifts -4px.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-head\"><span class=\"ds-card-icon\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 13l4-6 3 3 5-7\"/><path d=\"M11 3h3v3\"/></svg></span><span class=\"ds-card-meta\">01 / 04</span></div><h3 class=\"ds-card-title\">Dados &amp; Analytics</h3><p class=\"ds-card-body\">Diagnóstico, análise exploratória, modelagem estatística e dashboards que viram base para decisão.</p></article>",
+      "css": ".ds-card { position: relative; overflow: hidden; background: #0F1A3A; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 44px 40px; transition: border-color 0.4s, transform 0.4s, background 0.4s; color: #F5F8FF; font-family: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .ds-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #4ED7E0, transparent); opacity: 0; transition: opacity 0.4s; } .ds-card::after { content: ''; position: absolute; top: -30%; right: -10%; width: 360px; height: 360px; background: radial-gradient(circle, rgba(78, 215, 224, 0.10), transparent 65%); filter: blur(50px); opacity: 0; transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; } .ds-card:hover { border-color: #4ED7E0; transform: translateY(-4px); } .ds-card:hover::before { opacity: 0.85; } .ds-card:hover::after { opacity: 1; } .ds-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; position: relative; z-index: 1; } .ds-card-icon { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; color: #4ED7E0; background: rgba(78, 215, 224, 0.10); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 11px; transition: background 0.4s, color 0.4s, transform 0.4s; } .ds-card:hover .ds-card-icon { background: #4ED7E0; color: #06091A; transform: rotate(-6deg); } .ds-card-meta { font-family: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace; font-size: 0.78rem; color: #4ED7E0; letter-spacing: 0.06em; } .ds-card-title { font-family: Geist, sans-serif; font-weight: 500; font-size: 2rem; color: #F5F8FF; letter-spacing: -0.028em; line-height: 1.05; margin: 0 0 16px; max-width: 14ch; position: relative; z-index: 1; } .ds-card-body { color: #C1CCE3; font-size: 1rem; line-height: 1.6; max-width: 46ch; margin: 0; position: relative; z-index: 1; }"
+    },
+    {
+      "name": "Mono Chip",
+      "kind": "chip",
+      "refersTo": "chip-pill",
+      "description": "Compact mono pill — used for stack tags, project tech tags, team skills.",
+      "html": "<span class=\"ds-chip\">Python</span>",
+      "css": ".ds-chip { display: inline-block; font-family: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; font-weight: 500; color: #C1CCE3; padding: 5px 11px; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 999px; background: rgba(255, 255, 255, 0.025); letter-spacing: 0.01em; transition: border-color 0.4s, color 0.4s; } .ds-chip:hover { border-color: rgba(255, 255, 255, 0.16); color: #F5F8FF; }"
+    },
+    {
+      "name": "Section Eyebrow",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Mono uppercase tag preceded by 28×1px cyan rule with glow — the rhythm marker that opens every section.",
+      "html": "<span class=\"ds-eyebrow\">Frentes de trabalho</span>",
+      "css": ".ds-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: #9AE5EB; } .ds-eyebrow::before { content: ''; width: 28px; height: 1px; background: #4ED7E0; box-shadow: 0 0 6px rgba(78, 215, 224, 0.45); }"
+    },
+    {
+      "name": "Availability Pulse Pill",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Compact mono pill with a pulsing cyan dot — used to signal current availability/state.",
+      "html": "<span class=\"ds-pulse-pill\"><span class=\"ds-pulse-dot\"></span><span>Atendendo · Q3 2026 · resposta em até 48h úteis</span></span>",
+      "css": ".ds-pulse-pill { display: inline-flex; align-items: center; gap: 12px; font-family: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace; font-size: 0.7rem; color: #C1CCE3; letter-spacing: 0.16em; text-transform: uppercase; padding: 12px 18px; background: rgba(78, 215, 224, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 999px; } .ds-pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ED7E0; box-shadow: 0 0 0 4px rgba(78, 215, 224, 0.18), 0 0 14px rgba(78, 215, 224, 0.45); animation: ds-pulse 2.4s ease-in-out infinite; flex-shrink: 0; } @keyframes ds-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(78, 215, 224, 0.18), 0 0 14px rgba(78, 215, 224, 0.45); } 50% { box-shadow: 0 0 0 10px rgba(78, 215, 224, 0.04), 0 0 18px rgba(78, 215, 224, 0.30); } }"
+    },
+    {
+      "name": "Manifesto List Item",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "A numbered declaration at headline scale — mono index in cyan, italic emphasis word, hairline divider.",
+      "html": "<li class=\"ds-manifesto\"><span class=\"ds-manifesto-num\">01</span><span>Pergunta <em class=\"ds-manifesto-em\">antes</em> de modelo.</span></li>",
+      "css": ".ds-manifesto { list-style: none; font-family: Geist, sans-serif; font-weight: 400; font-size: clamp(2.4rem, 5.5vw, 4.6rem); color: #F5F8FF; line-height: 1.02; letter-spacing: -0.035em; display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); transition: color 0.4s, padding 0.4s; } .ds-manifesto:hover { color: #9AE5EB; padding-left: 16px; } .ds-manifesto-num { font-family: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace; font-style: normal; font-weight: 400; font-size: 0.85rem; color: #4ED7E0; letter-spacing: 0.05em; flex-shrink: 0; min-width: 32px; } .ds-manifesto-em { font-family: 'Instrument Serif', 'Iowan Old Style', Georgia, serif; font-style: italic; color: #9AE5EB; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Top-nav link — cyan underline reveal on hover, persistent cyan-light + glow when active.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">Serviços</a>",
+      "css": ".ds-nav-link { position: relative; color: #C1CCE3; font-family: Geist, sans-serif; font-size: 0.92rem; font-weight: 500; letter-spacing: -0.005em; text-decoration: none; transition: color 0.4s; } .ds-nav-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: #4ED7E0; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; } .ds-nav-link:hover { color: #9AE5EB; } .ds-nav-link:hover::after { transform: scaleX(1); } .ds-nav-link.active { color: #9AE5EB; } .ds-nav-link.active::after { transform: scaleX(1); box-shadow: 0 0 8px rgba(78, 215, 224, 0.45); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Deep Studio",
+    "overview": "deepblue is a quiet studio at depth. The surface is navy abyss — a near-black canvas with a faint hue commitment toward midnight blue (#06091A). Against it, one protagonist color — Deep-Sea Cyan (#4ED7E0) — does the work of voice: emphasis italics, hairline borders, the rare CTA, the dot that pulses next to 'accepting projects'. Typography carries identity: Geist for the architecture, Instrument Serif italic for the editorial flourish that signs every heading, mono Geist for instrument labels. Nothing here is decorative; every kinetic element — aurora drifts, the particle hero, the cyan sweep on project rows, the giant outlined wordmark — points at meaning.\n\nThis system explicitly rejects the generic BR consultancy aesthetic: stock photography, navy-and-gold corporate palettes, 'transformação digital' framing, decks-as-deliverable language, icon-card grids that exist to fill space. It also rejects the saturated-dark-mode crypto/AI hype lane — no neon glitches, no matrix particles cosplaying as data, no 'unlock the future' gloss. The reference neighborhood is Linear, Vercel, Stripe: hairline precision, editorial restraint, dark by intent. The site demonstrates the work it sells; if it ever feels generic, it is failing.",
+    "keyCharacteristics": [
+      "One protagonist color (Deep-Sea Cyan), used sparingly and always meaningfully",
+      "Italic-as-emphasis via Instrument Serif; never gradient text",
+      "Hairline 1px rules + tinted backgrounds; shadows reserved for elements that genuinely float",
+      "Mono labels for instrument-grade context (numbers, dates, stack lists)",
+      "Motion that drifts or sweeps; never bounces, never elastics",
+      "Section padding scales generously (160px+ at desktop); rhythm over density"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Deep-Sea Cyan is the only saturated color the site speaks with. Used on ≤10% of any screen — emphasis italics, the active accent, one CTA, the pulse dot, hover affordances. If a screen ever feels 'cyan-heavy', remove cyan until each remaining use earns its presence.", "section": "colors" },
+      { "name": "The No-Gradient-Text Rule", "body": "background-clip: text with a gradient is forbidden site-wide. Italic emphasis uses a solid cyan-light color. The team monogram is the only exception — there the gradient is a deliberate signature.", "section": "colors" },
+      { "name": "The Hue-Anchor Rule", "body": "Every neutral is tinted toward the brand hue. Never #000, never #FFF. If a new surface or ink color is added, it must carry a 0.005–0.02 chroma bias toward navy.", "section": "colors" },
+      { "name": "The Italic-Only-In-Headings Rule", "body": "Instrument Serif italic is reserved for emphasis inside Geist display, headline, or title elements — never as a standalone paragraph face. Body text remains Geist throughout. The italic is the signature, not the medium.", "section": "typography" },
+      { "name": "The Mono-Eyebrow Rule", "body": "Every major section opens with a mono uppercase tag preceded by a 28×1px cyan rule with cyan-glow. This is the site's rhythm marker; sections without it feel structureless.", "section": "typography" },
+      { "name": "The Letter-Spacing-Tightens-As-Size-Grows Rule", "body": "Display: -0.04em. Headline: -0.035em. Title: -0.02em. Body: -0.005em. Mono labels: +0.16em to +0.22em. Type at scale always tightens; type at micro-scale always opens.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "In-flow surfaces are flat. No shadow until the user expresses intent (hover, focus). When intent arrives, the surface either tonally lifts OR a cyan haze bloom emerges from behind — never both.", "section": "elevation" },
+      { "name": "The Float-Earns-Shadow Rule", "body": "Only elements that genuinely float in the viewport get a real box-shadow. Inline cards do not. If you reach for shadow on an in-flow card, the surface is asking for a tonal step or a cyan bloom instead.", "section": "elevation" },
+      { "name": "The Pill-For-Pressure Rule", "body": "Buttons are pills; inputs are rounded rectangles. Reversing this — boxy buttons or pill inputs — is forbidden. The pill is the brand's affordance for action; the rounded-rect is the affordance for capture.", "section": "components" },
+      { "name": "The Hairline-Plus-Bloom Rule", "body": "Every card pairs a 1px rule border at rest with a cyan haze bloom on hover. Adding a heavier border at rest is forbidden. Adding a drop shadow at rest is forbidden.", "section": "components" },
+      { "name": "The Top-Cyan-Hairline Rule", "body": "Major cards carry a top-edge ::before gradient hairline (transparent → cyan → transparent). This is the system's quiet signature — recurring across the site without ever shouting.", "section": "components" }
+    ],
+    "dos": [
+      "Do lead every section with a mono uppercase eyebrow preceded by a 28×1px cyan rule with glow. It is the site's rhythm marker.",
+      "Do use Instrument Serif italic for emphasis inside Geist headlines — 'Dados, software *e estratégia*' not 'Dados, software AND strategy'.",
+      "Do spend Deep-Sea Cyan at meaning-bearing moments only: emphasis text, primary CTAs, hairline accents, focus glows, the availability pulse-dot. ≤10% of any screen surface.",
+      "Do pair every interactive card with the cyan-haze bloom on hover, emerging from offscreen top-right at 50px+ blur radius.",
+      "Do use pill (999px) borders for all buttons. rounded-md (12px) is reserved for inputs. rounded-lg (20px) is reserved for major cards.",
+      "Do tint every neutral toward the brand hue. The cool cast on whites and the navy cast on blacks is non-negotiable.",
+      "Do carry mono labels with letter-spacing ≥ 0.16em uppercase for all eyebrows, indices, and instrument readings. Mono is the brand's voice for context.",
+      "Do preserve generous section padding (160px desktop, 100px mobile). Density is for cards; sections breathe.",
+      "Do ensure cyan body-text contrast against bg-card clears WCAG AA — the cyan ramp is bright enough but verify on each new pairing.",
+      "Do respect prefers-reduced-motion: aurora drift, marquee, particle canvas, and [data-animate] transitions should soften or stop for users who ask."
+    ],
+    "donts": [
+      "Don't use #000 or #FFF. Every neutral must carry a 0.005–0.02 chroma bias toward navy.",
+      "Don't use background-clip: text with a gradient anywhere except the team monogram. Italic emphasis uses a solid cyan-light color.",
+      "Don't introduce a second saturated accent color. The royal blue inside the team monogram is the only secondary.",
+      "Don't apply box-shadow to in-flow cards at rest. The Flat-At-Rest Rule.",
+      "Don't use side-stripe borders (border-left: 3px solid cyan) as a colored accent.",
+      "Don't ship icon-card grids that look like generic SaaS feature lists.",
+      "Don't reproduce the hero density on inner sections. The aurora drift, particle canvas, and mouse spotlight live in the hero only.",
+      "Don't look like generic BR consultancies (Deloitte/big-four wannabes): stock photos of handshakes, navy + gold, vague 'transformação digital' headlines, 'our 5-pillar framework' copy.",
+      "Don't look like a bootcamp-grad data-scientist portfolio: dark-blue hero, 'I help companies leverage data', identical project cards in a 3-up grid.",
+      "Don't look like SaaS-template-cream landing pages, AI-hype neon-on-black, or crypto-futurist glitch text.",
+      "Don't animate CSS layout properties. Use transform, opacity, filter, box-shadow, background.",
+      "Don't use bounce or elastic easing. The site uses cubic-bezier(0.22, 0.61, 0.36, 1) and cubic-bezier(0.16, 1, 0.3, 1).",
+      "Don't add em dashes to copy. Use commas, colons, semicolons, or periods."
+    ]
+  }
+}
