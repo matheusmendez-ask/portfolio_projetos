@@ -2485,12 +2485,12 @@ em, .italic {
 .footer-signature {
     font-family: var(--f-display);
     font-weight: 500;
-    font-size: clamp(5rem, 22vw, 22rem);
+    font-size: clamp(1.8rem, 7vw, 7rem);
     color: transparent;
     -webkit-text-stroke: 1px var(--rule-strong);
     text-stroke: 1px var(--rule-strong);
-    line-height: 0.78;
-    letter-spacing: -0.06em;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
     text-align: center;
     margin: 32px 0 24px;
     user-select: none;
@@ -2498,9 +2498,20 @@ em, .italic {
     -webkit-background-clip: text;
     background-clip: text;
     position: relative;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.footer-signature .dot { color: var(--cyan); -webkit-text-stroke: 0; }
+.footer-signature .sep,
+.footer-signature .dot {
+    color: var(--cyan);
+    -webkit-text-stroke: 0;
+}
+
+.footer-signature .sep {
+    padding: 0 0.18em;
+    font-weight: 400;
+}
 
 .footer-bottom {
     padding-top: 28px;
