@@ -147,7 +147,9 @@
         }
 
         /* Project images: gentle parallax — image translates slower than
-           its container as you scroll. Subtle, doesn't break layout. */
+           its container as you scroll. Pure transform during scroll,
+           doesn't interfere with the existing [data-animate] reveal
+           animations on the project cards themselves. */
         document.querySelectorAll('.project-card .project-image img').forEach((img) => {
             gsap.fromTo(img,
                 { yPercent: -8, scale: 1.08 },
@@ -165,39 +167,14 @@
             );
         });
 
-        /* Service cards: gentle stagger entrance when grid enters viewport */
-        const servicesGrid = document.querySelector('.services-grid');
-        if (servicesGrid) {
-            gsap.from(servicesGrid.querySelectorAll('.service-card'), {
-                y: 40,
-                opacity: 0,
-                duration: 0.85,
-                ease: 'power3.out',
-                stagger: 0.08,
-                scrollTrigger: {
-                    trigger: servicesGrid,
-                    start: 'top 75%',
-                    once: true,
-                },
-            });
-        }
-
-        /* Manifesto lines: stagger in from the side */
-        const manifestoList = document.querySelector('.manifesto-list');
-        if (manifestoList) {
-            gsap.from(manifestoList.querySelectorAll('li'), {
-                x: -30,
-                opacity: 0,
-                duration: 0.7,
-                ease: 'power3.out',
-                stagger: 0.10,
-                scrollTrigger: {
-                    trigger: manifestoList,
-                    start: 'top 80%',
-                    once: true,
-                },
-            });
-        }
+        /* NOTE: Removed the GSAP stagger entrances for services + manifesto.
+           The existing site already animates these via IntersectionObserver
+           + [data-animate] / .animated CSS. GSAP's gsap.from() was setting
+           the items to opacity:0 with inline styles (higher specificity than
+           the existing CSS), and when the ScrollTrigger trigger fell out of
+           sync with Lenis, the items stayed invisible (only the first one
+           rendered before the conflict). The native reveal is solid — leave
+           it alone. */
     }
 
     /* --------------------------------------------------------
