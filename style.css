@@ -3028,3 +3028,130 @@ body.light .team-prose p .tk:hover {
     border-color: var(--cyan);
     color: var(--ink);
 }
+
+/* ============================================================
+   Cinematic layer additions (Lenis + cursor + preloader)
+   ============================================================ */
+
+/* ---- Lenis required CSS ---- */
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+/* ---- Custom cursor (mix-blend-mode: difference) ---- */
+html.no-cursor,
+html.no-cursor * { cursor: none !important; }
+
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    margin: -14px 0 0 -14px;
+    border-radius: 50%;
+    border: 1.5px solid #fff;
+    background: transparent;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    mix-blend-mode: difference;
+    transition:
+        opacity 0.25s ease,
+        width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+        margin 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.32s ease;
+    will-change: transform, width, height;
+}
+
+.cursor-ring[data-state="hover"] {
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    background: rgba(255, 255, 255, 0.16);
+    border-width: 1px;
+}
+
+/* ---- Preloader (intro) ---- */
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    background: var(--bg-primary, #000);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preloader.exiting {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preloader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.preloader-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: #0B132B;
+    padding: 4px;
+    display: grid;
+    place-items: center;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.10),
+        0 0 36px rgba(78, 215, 224, 0.45);
+    animation: preIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.preloader-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.preloader-word {
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.04em;
+    color: #F5F8FF;
+    animation: preIn 0.7s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.preloader-word span { color: #4ED7E0; }
+
+.preloader-tag {
+    font-family: 'Geist Mono', 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(245, 248, 255, 0.45);
+    margin-top: 6px;
+    animation: preIn 0.7s 0.30s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes preIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Hero 3D canvas (Three.js wave plane) ---- */
+.hero-3d-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;            /* over particle canvas, under text/overlay */
+    pointer-events: none;
+}
