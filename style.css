@@ -3155,3 +3155,247 @@ html.no-cursor * { cursor: none !important; }
     z-index: 1;            /* over particle canvas, under text/overlay */
     pointer-events: none;
 }
+
+/* ============================================================
+   Quem sou — refined editorial bio
+   ============================================================ */
+
+/* Pull quote — opens the bio with the personal manifesto */
+.team-prose .team-quote {
+    margin: 0 0 44px;
+    padding: 0 0 0 28px;
+    border-left: 2px solid var(--cyan);
+    position: relative;
+}
+
+.team-prose .team-quote .team-quote-mark {
+    position: absolute;
+    top: -22px;
+    left: 16px;
+    font-family: var(--f-italic);
+    font-style: italic;
+    font-size: 4rem;
+    color: var(--cyan);
+    line-height: 1;
+    opacity: 0.55;
+}
+
+.team-prose .team-quote p {
+    font-family: var(--f-italic);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2vw, 1.85rem);
+    line-height: 1.30;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    max-width: 28ch;
+    margin: 0;
+}
+
+/* Definition list — Formação / Prática / Stack rows */
+.team-prose .team-meta {
+    margin: 0;
+    padding: 36px 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.team-prose .team-meta-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 36px;
+    align-items: baseline;
+}
+
+.team-prose .team-meta-row dt {
+    font-family: var(--f-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.20em;
+    color: var(--cyan);
+    margin: 0;
+    padding-top: 4px;
+}
+
+.team-prose .team-meta-row dd {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    line-height: 1.65;
+}
+
+/* Credentials — Formação rows */
+.team-prose .cred {
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--rule-soft);
+    margin-bottom: 14px;
+}
+
+.team-prose .cred:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.team-prose .cred .cred-degree {
+    display: block;
+    font-family: var(--f-sans);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+}
+
+.team-prose .cred .cred-school {
+    display: block;
+    font-family: var(--f-sans);
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    letter-spacing: 0;
+}
+
+.team-prose .cred .cred-school strong {
+    color: var(--cyan-light);
+    font-weight: 600;
+}
+
+/* Prática lede — emphasized lead sentence */
+.team-prose .team-lede {
+    font-size: 1.10rem !important;
+    color: var(--ink) !important;
+    margin: 0 0 14px !important;
+    line-height: 1.55 !important;
+}
+
+.team-prose .team-num {
+    font-family: var(--f-sans);
+    font-weight: 700;
+    color: var(--cyan-light);
+    margin-right: 4px;
+    letter-spacing: -0.01em;
+}
+
+.team-prose .team-meta-row dd p {
+    margin: 0 0 12px;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 56ch;
+}
+
+.team-prose .team-meta-row dd p:last-child { margin-bottom: 0; }
+
+/* Stack list — categorized rows */
+.team-prose .team-stack {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.team-prose .team-stack li {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 11px 0;
+    border-bottom: 1px dashed var(--rule-soft);
+}
+
+.team-prose .team-stack li:first-child { padding-top: 0; }
+.team-prose .team-stack li:last-child  { border-bottom: none; padding-bottom: 0; }
+
+.team-prose .team-stack .stack-cat {
+    font-family: var(--f-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+}
+
+.team-prose .team-stack .stack-list {
+    font-family: var(--f-sans);
+    font-size: 0.98rem;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+/* Footer — social grid + inline CTA */
+.team-prose .team-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 36px;
+}
+
+.team-prose .team-foot .team-social-grid {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.team-prose .team-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cyan);
+    color: #06091A;
+    font-family: var(--f-sans);
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+    padding: 13px 24px;
+    border-radius: 999px;
+    transition: background 0.4s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    box-shadow: 0 0 0 0 rgba(78, 215, 224, 0);
+}
+
+.team-prose .team-cta:hover {
+    background: var(--cyan-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(78, 215, 224, 0.28);
+}
+
+.team-prose .team-cta i {
+    transition: transform 0.4s var(--ease);
+}
+
+.team-prose .team-cta:hover i { transform: translateX(4px); }
+
+/* Light mode tweaks */
+body.light .team-prose .team-quote { border-left-color: var(--cyan-deep); }
+body.light .team-prose .team-quote .team-quote-mark { color: var(--cyan-deep); }
+body.light .team-prose .team-meta-row dt { color: var(--cyan-deep); }
+body.light .team-prose .cred .cred-school strong { color: var(--cyan-deep); }
+body.light .team-prose .team-num { color: var(--cyan-deep); }
+body.light .team-prose .team-cta { background: var(--ink); color: #FBF8F0; }
+body.light .team-prose .team-cta:hover { background: var(--cyan-deep); }
+
+/* Responsive */
+@media (max-width: 760px) {
+    .team-prose .team-meta-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .team-prose .team-stack li {
+        grid-template-columns: 110px 1fr;
+        gap: 16px;
+    }
+    .team-prose .team-foot {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .team-prose .team-cta {
+        justify-content: center;
+    }
+}
