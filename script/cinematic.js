@@ -121,7 +121,9 @@
             const el = document.querySelector(href);
             if (!el) return;
             const navbar = document.getElementById('navbar');
-            const offset = -((navbar?.offsetHeight || 80) + 20);
+            /* Extra buffer (40px) so section header is comfortably below
+               the nav after the navbar shrinks into its scrolled state. */
+            const offset = -((navbar?.offsetHeight || 80) + 40);
             e.preventDefault();
             /* Stop the existing handler from also firing */
             e.stopImmediatePropagation();
@@ -146,35 +148,12 @@
             gsap.ticker.lagSmoothing(0);
         }
 
-        /* Project images: gentle parallax — image translates slower than
-           its container as you scroll. Pure transform during scroll,
-           doesn't interfere with the existing [data-animate] reveal
-           animations on the project cards themselves. */
-        document.querySelectorAll('.project-card .project-image img').forEach((img) => {
-            gsap.fromTo(img,
-                { yPercent: -8, scale: 1.08 },
-                {
-                    yPercent: 8,
-                    scale: 1.08,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: img.closest('.project-card'),
-                        start: 'top bottom',
-                        end: 'bottom top',
-                        scrub: 0.6,
-                    },
-                }
-            );
-        });
-
-        /* NOTE: Removed the GSAP stagger entrances for services + manifesto.
-           The existing site already animates these via IntersectionObserver
-           + [data-animate] / .animated CSS. GSAP's gsap.from() was setting
-           the items to opacity:0 with inline styles (higher specificity than
-           the existing CSS), and when the ScrollTrigger trigger fell out of
-           sync with Lenis, the items stayed invisible (only the first one
-           rendered before the conflict). The native reveal is solid — leave
-           it alone. */
+        /* GSAP/ScrollTrigger is loaded and synced with Lenis above, ready
+           for any future scroll-driven effects. Currently no animations
+           registered — the site's existing CSS + IntersectionObserver
+           reveal animations work well and adding GSAP on top kept causing
+           subtle layout/order issues. Keep GSAP available as a tool but
+           don't apply anything by default. */
     }
 
     /* --------------------------------------------------------
