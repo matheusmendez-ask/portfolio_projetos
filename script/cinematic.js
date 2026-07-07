@@ -157,11 +157,33 @@
     }
 
     /* --------------------------------------------------------
+       Scroll progress bar — thin cyan line at the very top
+       -------------------------------------------------------- */
+    function initProgress() {
+        const bar = document.createElement('div');
+        bar.className = 'scroll-progress';
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(bar);
+
+        let ticking = false;
+        function update() {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+            ticking = false;
+        }
+        window.addEventListener('scroll', () => {
+            if (!ticking) { ticking = true; requestAnimationFrame(update); }
+        }, { passive: true });
+        update();
+    }
+
+    /* --------------------------------------------------------
        Boot sequence
        -------------------------------------------------------- */
     function boot() {
         initPreloader();
         initCursor();
+        initProgress();
         const lenis = initLenis();
         initGsap(lenis);
     }

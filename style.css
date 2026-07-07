@@ -3399,3 +3399,61 @@ body.light .team-prose .team-cta:hover { background: var(--cyan-deep); }
         justify-content: center;
     }
 }
+
+/* ============================================================
+   Immersive deep-ocean scene (script/immersive.js)
+   ============================================================ */
+.immersive-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Sections that act as transparent "windows" into the 3D scene.
+   All other .section blocks keep their solid var(--bg) and paint
+   over the canvas — content stays perfectly legible. */
+body:not(.no-webgl) #hero { background: transparent; }
+body:not(.no-webgl) .manifesto { background: transparent; }
+body:not(.no-webgl) .cta-section { background: transparent; }
+
+/* Soft legibility scrim inside the windows (radial, center-weighted) */
+.manifesto::after,
+.cta-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 90% 70% at 50% 50%, rgba(6, 9, 26, 0.42), transparent 75%);
+    z-index: 0;
+}
+
+body.light .manifesto::after,
+body.light .cta-section::after {
+    background: radial-gradient(ellipse 90% 70% at 50% 50%, rgba(237, 231, 216, 0.55), transparent 75%);
+}
+
+.manifesto > .container,
+.cta-section > .container,
+.cta-section > .container-editorial {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   Scroll progress bar
+   ============================================================ */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cyan-deep), var(--cyan));
+    box-shadow: 0 0 12px rgba(78, 215, 224, 0.55);
+    z-index: 1200;
+    pointer-events: none;
+    transition: width 0.08s linear;
+}
