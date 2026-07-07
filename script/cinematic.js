@@ -111,6 +111,8 @@
         }
         requestAnimationFrame(loop);
 
+        window.__lenis = lenis; /* debug/verification hook */
+
         /* Intercept anchor clicks in CAPTURE phase so we run before
            the existing inline smooth-scroll handler. */
         document.addEventListener('click', (e) => {
@@ -148,12 +150,76 @@
             gsap.ticker.lagSmoothing(0);
         }
 
-        /* GSAP/ScrollTrigger is loaded and synced with Lenis above, ready
-           for any future scroll-driven effects. Currently no animations
-           registered — the site's existing CSS + IntersectionObserver
-           reveal animations work well and adding GSAP on top kept causing
-           subtle layout/order issues. Keep GSAP available as a tool but
-           don't apply anything by default. */
+        initManifestoCinema();
+    }
+
+    /* --------------------------------------------------------
+       Manifesto cinema — pinned scroll sequence (desktop only).
+       The section pins for ~350vh while each of the 5 principles
+       takes the stage one at a time; the 3D camera behind pans
+       via the window.__immersiveCine hook read by immersive.js.
+       Mobile / reduced-motion keep the original list + IO reveal.
+       -------------------------------------------------------- */
+    function initManifestoCinema() {
+        if (!window.matchMedia('(min-width: 1025px)').matches) return;
+
+        const section = document.querySelector('.manifesto');
+        const list = section?.querySelector('.manifesto-list');
+        const items = list ? Array.from(list.querySelectorAll('li')) : [];
+        if (!section || items.length < 2) return;
+
+        section.classList.add('cinema');
+
+        /* Neutralize the IntersectionObserver reveal on these nodes —
+           GSAP owns them now (CSS transition is killed by .cinema). */
+        section.querySelectorAll('[data-animate]').forEach((el) => el.classList.add('animated'));
+
+        /* Progress rail (one dot per principle) */
+        const rail = document.createElement('div');
+        rail.className = 'manifesto-progress';
+        rail.setAttribute('aria-hidden', 'true');
+        items.forEach(() => rail.appendChild(document.createElement('span')));
+        section.appendChild(rail);
+        const dots = Array.from(rail.children);
+        const setDot = (idx) => dots.forEach((d, i) => d.classList.toggle('on', i === idx));
+        setDot(0);
+
+        /* Camera hook — immersive.js adds these values every frame.
+           Path is 0 → peak → 0 so nothing leaks outside the section. */
+        const cine = (window.__immersiveCine = { x: 0, roll: 0 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: 'top top',
+                end: '+=350%',
+                pin: true,
+                scrub: 0.8,
+                onUpdate(self) {
+                    setDot(Math.min(items.length - 1, Math.floor(self.progress * items.length)));
+                },
+            },
+        });
+
+        items.forEach((li, i) => {
+            tl.fromTo(li,
+                { autoAlpha: 0, y: 70, scale: 0.97 },
+                { autoAlpha: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out' }
+            );
+            tl.to(li, { duration: 0.7 }); /* hold */
+            if (i < items.length - 1) {
+                tl.to(li, { autoAlpha: 0, y: -70, duration: 0.6, ease: 'power2.in' });
+            }
+        });
+
+        /* Camera sweep across the whole pinned distance: pan right then
+           settle back, with a subtle roll — starts and ends at neutral. */
+        const total = tl.duration();
+        gsap.timeline({
+            scrollTrigger: { trigger: section, start: 'top top', end: '+=350%', scrub: 0.8 },
+        })
+            .to(cine, { x: 1.6, roll: 0.045, duration: total * 0.5, ease: 'sine.inOut' })
+            .to(cine, { x: 0, roll: 0, duration: total * 0.5, ease: 'sine.inOut' });
     }
 
     /* --------------------------------------------------------

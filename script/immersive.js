@@ -229,38 +229,138 @@
     }, { passive: true });
 
     /* --------------------------------------------------------
-       Animation loop
+       Intro — particles gather to spell "deepblue", hold, then
+       disperse back into the ocean. Silent-fail: any problem
+       leaves the particles in normal ocean mode.
        -------------------------------------------------------- */
     const clock = new THREE.Clock();
+    const intro = { phase: 'idle', t0: 0, k: 0 };
+    const GATHER_S = 1.8, HOLD_S = 1.6, RELEASE_S = 1.6;
+    const easeIO = (u) => (u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2);
+
+    function buildWordTargets() {
+        const W = 1100, H = 260;
+        const cv = document.createElement('canvas');
+        cv.width = W; cv.height = H;
+        const c2 = cv.getContext('2d');
+        c2.fillStyle = '#fff';
+        c2.font = '800 150px Geist, Arial, sans-serif';
+        c2.textAlign = 'center';
+        c2.textBaseline = 'middle';
+        c2.fillText('deepblue', W / 2, H / 2);
+        const data = c2.getImageData(0, 0, W, H).data;
+        const pts = [];
+        const STEP = 6;
+        for (let y = 0; y < H; y += STEP) {
+            for (let x = 0; x < W; x += STEP) {
+                if (data[(y * W + x) * 4 + 3] > 128) {
+                    pts.push([
+                        (x / W - 0.5) * 9.0 + 1.6,  /* world x — clear of the DOM headline */
+                        (0.5 - y / H) * 2.2 + 1.45, /* world y — upper-right quadrant */
+                        1.5,                         /* world z — in front of the wave */
+                    ]);
+                }
+            }
+        }
+        return pts;
+    }
+
+    const fontsReady = (document.fonts && document.fonts.ready)
+        ? document.fonts.ready : Promise.resolve();
+    Promise.race([fontsReady, new Promise((r) => setTimeout(r, 900))]).then(() => {
+        try {
+            if (prefersReduce || window.scrollY > 120) { intro.phase = 'done'; return; }
+            const wordPts = buildWordTargets();
+            if (wordPts.length < 50) { intro.phase = 'done'; return; }
+            let gi = 0;
+            particleGroups.forEach((pts) => {
+                const n = pts.userData.speeds.length;
+                const word = new Float32Array(n * 3);
+                for (let i = 0; i < n; i++) {
+                    const p = wordPts[gi % wordPts.length]; gi++;
+                    word[i * 3]     = p[0] + (Math.random() - 0.5) * 0.06;
+                    word[i * 3 + 1] = p[1] + (Math.random() - 0.5) * 0.06;
+                    word[i * 3 + 2] = p[2] + (Math.random() - 0.5) * 0.35;
+                }
+                pts.userData.word = word;
+                /* snapshot of ocean positions to return to */
+                pts.userData.start = new Float32Array(pts.geometry.attributes.position.array);
+            });
+            intro.phase = 'gather';
+            intro.t0 = clock.getElapsedTime();
+        } catch (e) { intro.phase = 'done'; }
+    });
+
+    /* --------------------------------------------------------
+       Animation loop
+       -------------------------------------------------------- */
     let raf = 0;
 
     function frame() {
         const t = clock.getElapsedTime();
         wireMat.uniforms.uTime.value = t;
 
-        /* Slow particle drift — sideways loop */
-        particleGroups.forEach((pts, gi) => {
-            const pos = pts.geometry.attributes.position;
-            const speeds = pts.userData.speeds;
-            const spreadX = pts.userData.band.spread[0];
-            for (let i = 0; i < speeds.length; i++) {
-                let x = pos.getX(i) + speeds[i] * 0.006;
-                if (x > spreadX / 2) x = -spreadX / 2;
-                pos.setX(i, x);
-            }
-            pos.needsUpdate = true;
-            pts.rotation.y = Math.sin(t * 0.03 + gi) * 0.02;
-        });
+        const ph = intro.phase;
+
+        if (ph === 'gather' || ph === 'hold' || ph === 'release') {
+            /* Word formation phases — positions interpolate start↔word */
+            const el = t - intro.t0;
+            let k;
+            if (ph === 'gather')      k = easeIO(Math.min(el / GATHER_S, 1));
+            else if (ph === 'hold')   k = 1;
+            else                      k = intro.k * (1 - easeIO(Math.min(el / RELEASE_S, 1)));
+            if (ph !== 'release') intro.k = k;
+
+            particleGroups.forEach((pts) => {
+                const { word, start, speeds } = pts.userData;
+                if (!word) return;
+                const pos = pts.geometry.attributes.position;
+                for (let i = 0; i < speeds.length; i++) {
+                    const sx = start[i * 3], sy = start[i * 3 + 1], sz = start[i * 3 + 2];
+                    const shimmer = ph === 'hold' ? Math.sin(t * 2.5 + i) * 0.015 : 0;
+                    pos.setXYZ(i,
+                        sx + (word[i * 3]     - sx) * k,
+                        sy + (word[i * 3 + 1] + shimmer - sy) * k,
+                        sz + (word[i * 3 + 2] - sz) * k
+                    );
+                }
+                pos.needsUpdate = true;
+                pts.rotation.y = 0;
+            });
+
+            /* Phase transitions — scrolling away skips ahead */
+            const interrupted = window.scrollY > 150;
+            if (ph === 'gather' && (el >= GATHER_S)) { intro.phase = 'hold'; intro.t0 = t; }
+            else if (ph === 'gather' && interrupted) { intro.phase = 'release'; intro.t0 = t; }
+            else if (ph === 'hold' && (el >= HOLD_S || interrupted)) { intro.phase = 'release'; intro.t0 = t; }
+            else if (ph === 'release' && el >= RELEASE_S) { intro.phase = 'done'; }
+        } else {
+            /* Normal ocean — slow particle drift, sideways loop */
+            particleGroups.forEach((pts, gi) => {
+                const pos = pts.geometry.attributes.position;
+                const speeds = pts.userData.speeds;
+                const spreadX = pts.userData.band.spread[0];
+                for (let i = 0; i < speeds.length; i++) {
+                    let x = pos.getX(i) + speeds[i] * 0.006;
+                    if (x > spreadX / 2) x = -spreadX / 2;
+                    pos.setX(i, x);
+                }
+                pos.needsUpdate = true;
+                pts.rotation.y = Math.sin(t * 0.03 + gi) * 0.02;
+            });
+        }
 
         /* Mouse parallax (lerped) */
         mx += (tmx - mx) * 0.04;
         my += (tmy - my) * 0.04;
 
-        /* Camera dive: descend + push forward as the page scrolls */
-        camera.position.x = mx * 0.9;
+        /* Camera dive + manifesto cinema hook (cinematic.js writes it) */
+        const cine = window.__immersiveCine;
+        camera.position.x = mx * 0.9 + (cine ? cine.x : 0);
         camera.position.y = 1.2 - scrollProgress * 4.6 - my * 0.35;
         camera.position.z = 9 - scrollProgress * 2.5;
         camera.lookAt(mx * 0.5, camera.position.y - 0.6, 0);
+        if (cine && cine.roll) camera.rotation.z += cine.roll;
 
         renderer.render(scene, camera);
         raf = requestAnimationFrame(frame);

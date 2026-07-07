@@ -3457,3 +3457,63 @@ body.light .cta-section::after {
     pointer-events: none;
     transition: width 0.08s linear;
 }
+
+/* ============================================================
+   Manifesto — cinema mode (pinned scroll sequence, desktop only;
+   class added by script/cinematic.js when GSAP path is active)
+   ============================================================ */
+.manifesto.cinema {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.manifesto.cinema .container { width: 100%; }
+
+.manifesto.cinema .manifesto-list {
+    position: relative;
+    height: 40vh;
+    min-height: 320px;
+}
+
+.manifesto.cinema .manifesto-list li {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    border-bottom: none;
+    /* GSAP owns these — kill the [data-animate] CSS transition so
+       scrubbed inline styles don't fight a 0.7s ease */
+    transition: none !important;
+}
+
+.manifesto.cinema .manifesto-list li:hover { padding-left: 0; }
+
+/* progress rail (01–05) on the right during the pinned scene */
+.manifesto.cinema .manifesto-progress {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 2;
+}
+
+.manifesto.cinema .manifesto-progress span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rule-strong);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.manifesto.cinema .manifesto-progress span.on {
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan-glow);
+    transform: scale(1.35);
+}
